@@ -1,0 +1,98 @@
+<svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="550"
+    height="400"
+    version="1.1"
+    viewBox="-365 -80 730 1050"
+    id="logo"
+>
+    <g data-animatable-logo class="shake reverse">
+        <polygon
+            class="fil0"
+            points="-0.713,0.053 -359.551,410.194 -473.28,803.81 -96.25,937.425 1.907,241.567 "
+        ></polygon>
+        <path
+            class="fil1"
+            d="M-359.551 410.194c138.187,-49.592 334.485,-121.135 376.364,-232.479 4.789,-12.73 -4.678,-132.259 -13.069,-144.449 -187.718,-272.712 -751.738,516.332 -363.295,376.928z"
+        ></path>
+        <path
+            class="fil0"
+            d="M-651.345 116.767l185.203 344.701c119.929,-59.99 392.095,-169.923 428.03,-314.599 3.279,-13.201 -19.91,-130.834 -29.653,-141.976 -83.419,-95.393 -336.392,-47.368 -583.58,111.874z"
+        ></path>
+    </g>
+    <g data-animatable-logo class="shake">
+        <polygon
+            class="fil0"
+            points="-0.713,0.053 358.126,410.194 471.855,803.81 94.824,937.425 -3.333,241.567 "
+        ></polygon>
+        <path
+            class="fil1"
+            d="M358.126 410.194c-138.187,-49.592 -334.486,-121.135 -376.365,-232.479 -4.789,-12.73 4.678,-132.259 13.069,-144.449 187.719,-272.712 751.739,516.332 363.296,376.928z"
+        ></path>
+        <path
+            class="fil0"
+            d="M649.92 116.767l-185.203 344.701c-119.929,-59.99 -392.096,-169.923 -428.031,-314.599 -3.279,-13.201 19.91,-130.834 29.653,-141.976 83.419,-95.393 336.393,-47.368 583.581,111.874z"
+        ></path>
+    </g>
+    <path
+        id="heart"
+        class="fil2"
+        d="M-0.713 0.053c-33.229,-25.706 -99.166,-74.578 -140.473,-46.989 -116.438,77.769 29.217,302.139 134.702,310.309 1.631,0.195 10.368,0.185 11.542,0 105.485,-8.171 251.142,-232.541 134.702,-310.309 -41.307,-27.589 -107.244,21.283 -140.473,46.989z"
+    ></path>
+</svg>
+
+<script>
+    const logo = document.getElementById('logo');
+    const animatingElements = document.querySelectorAll(
+        '[data-animatable-logo]'
+    );
+
+    if (animatingElements.length > 0 && logo) {
+        const pointerenterCallback = () => {
+            animatingElements.forEach((animatingElement) =>
+                animatingElement.classList.add('shake')
+            );
+            logo.removeEventListener('pointerenter', pointerenterCallback);
+        };
+
+        animatingElements.forEach((animatingElement) =>
+            animatingElement.addEventListener('animationend', () => {
+                animatingElement.classList.remove('shake');
+                logo.addEventListener('pointerenter', pointerenterCallback);
+            })
+        );
+    }
+</script>
+
+<style>
+    .fil1 {
+        fill: #534b69;
+    }
+    .fil0 {
+        fill: #6b6087;
+    }
+    .fil2 {
+        fill: #e1c791;
+    }
+    @keyframes shake {
+        0% {
+            rotate: 0deg;
+        }
+        50% {
+            rotate: var(--angle);
+        }
+        100% {
+            rotate: 0deg;
+        }
+    }
+    .shake {
+        animation: var(--duration) cubic-bezier(0, 0.55, 0.45, 1) var(--delay) 1
+            alternate both running shake;
+        --angle: 2.5deg;
+        --delay: 0s;
+        --duration: 1.5s;
+    }
+    .reverse {
+        --angle: -2.5deg;
+    }
+</style>
