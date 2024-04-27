@@ -39,14 +39,22 @@ Well, it sure contains something related to input devices, and considering that 
 
 Before I explain how do we turn images into text, let's talk about why is it even required in the first place.
 
-Computers don't know the difference between images, text, or video. To a computer all of it is just numbers, meaning that word `cat` to a computer is exactly the same as numers 99, 97, and 116.
+Computers don't know the difference between images, text, video, or anything else. To a computer all of it is just numbers, meaning that word `cat` to a computer is exactly the same as numers 99, 97, and 116.
 
-That's because what numbers mean is up to the programmer, and I, the programmer, declare that 99 means `c`, 97 means `a`, and `116` means `t`, and I will treat those numbers as such.
+That's because what numbers mean is up to the programmer, and I, the programmer, can declare that 99 means `c`, 97 means `a`, and `116` means `t`, and I will treat those numbers as such.
 
-And because everything is just numbers, you can try treating everything as text. Try it now, upload any image here and see what it looks like if you treat it as text. It actually doesn't even have to be an image, you can upload any file you want and I will show you what is looks like if we treat it as text.
+So we can just take any image we want, treat that image data as text, and shove it inside of any text we want? Well, it's actually not that simple.
 
-(TODO: Write demo in question)
+It would be a pain if every programmer just decided themselves what number is what letter. You would receive a plain text file from your friend and be unable to read it because numbers they chose for letters are different from those you chose. For that reason, all programmers agreed that for encoding English we will all use the same numbers defined for ASCII.
 
-Cool right? So we can just take any image we want, treat that image data as text, and shove it inside of any text we want?
+ASCII is an 7-bit encoding for text. It's pretty good, includes all English letters, uppercase and lowercase, even all numbers and some special symbols. But there are 2 issues:
+1. 7-bits per letter means that for text to actually be ASCII, one bit always has to be 0. That means we can't really treat any arbitrary data as ASCII.
+2. 33 out of 128 letters used in ASCII are not printable characters. It's either control codes for [teletypes](https://en.wikipedia.org/wiki/Teleprinter), or other control codes that don't actually represent text.
 
-Well, it's actually not that simple.
+Okay, so directly shoving our data into text won't work. But we still have like 95 characters that are usable actual text. Can we come up with some system to send any data using some of those?
+
+Yes, we can.
+
+## Base64
+
+System commonly used for that purpose is called base64. The idea is quite simple: what if we take 64 letters, decide what 6 bits each of them represents, and then encode our data in them.
