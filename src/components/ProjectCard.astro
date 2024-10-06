@@ -1,0 +1,120 @@
+---
+import Image from 'astro/components/Image.astro';
+import TagsDropdown from './TagsDropdown.astro';
+
+interface Props {
+    title: string;
+    url?: string;
+    tags?: string[];
+    imageName?: string;
+}
+
+const { title, url, tags, imageName } = Astro.props;
+---
+
+<article class:list={{ 'short': !imageName }}>
+    {
+        imageName && (<>
+            <div class="background-container">
+                <Image
+                    src={`/screenshots/${imageName}.png`}
+                    alt=""
+                    width={350}
+                    height={184}
+                    class="background"
+                />
+            </div>
+            <Image
+                src={`/screenshots/${imageName}.png`}
+                alt=""
+                width={350}
+                height={184}
+            />
+        </>)
+    }
+    <div class="description">
+        <h3>
+            {
+                url ? (
+                    <a href={url} target="_blank">
+                        {title}
+                    </a>
+                ) : (
+                    title
+                )
+            }
+        </h3>
+        <p><slot /></p>
+        <footer>
+            {
+                tags && (
+                    <TagsDropdown tags={tags} />
+                )
+            }
+        </footer>
+    </div>
+</article>
+
+<style>
+    h3 {
+        color: var(--text-color);
+        font-weight: bolder;
+        font-size: 2rem;
+        margin: 0;
+    }
+    a {
+        text-shadow: none;
+        text-decoration: underline;
+        background-clip: text;
+        color: transparent;
+        background-color: var(--text-color);
+    }
+    a:hover {
+        background-image: linear-gradient(to top, var(--tag-background-1),var(--text-color));
+        background-clip: text;
+        color: transparent;
+    }
+    article {
+        background-color: var(--background-2);
+        border-radius: 10px;
+        display: flex;
+        position: relative;
+    }
+    .short {
+        max-width: calc(50% - 10px);
+        width: 100%;
+    }
+    .short .description {
+        width: 100%;
+    }
+    .description {
+        margin-left: 1ch;
+        margin-right: 1ch;
+        margin-bottom: 0.5em;
+        display: flex;
+        flex-direction: column;
+        text-shadow: 0px 0px 5px #000;
+    }
+    .background {
+        scale: 1.5 1.1;
+        filter: blur(50px);
+        opacity: 0.8;
+        position: absolute;
+        left: 0
+    }
+    .background-container {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        overflow: hidden;
+    }
+    article > :not(.background-container) {
+        z-index: 1;
+    }
+    footer {
+        text-align: left;
+        margin-top: auto;
+    }
+</style>

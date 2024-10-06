@@ -1,0 +1,58 @@
+---
+import ProjectCard from './ProjectCard.astro';
+---
+
+<div>
+    <ProjectCard
+        title="Agent Up In The Sky"
+        url="https://punishedbernadetta.itch.io/agent-up-in-the-sky"
+        tags={['Game development', 'Godot']}
+        imageName="agent"
+        >Twin stick shooter where you are a secret service agent on a mission to stop terrorist
+        who have hijacked a plane.</ProjectCard
+    >
+    <ProjectCard
+        title="Ducklake"
+        url="https://ducklake.detta.dev/"
+        tags={['Game development', 'PWA', 'Three.js', 'TypeScript']}
+        imageName="ducklake"
+        >Lake full of ducks you can feed, made with three.js and installable as
+        a PWA.</ProjectCard
+    >
+    <ProjectCard
+        title="Get Spotify Song Name"
+        url="https://spotify.detta.dev/"
+        tags={['Web development', 'PWA', 'Astro', 'TypeScript']}
+        imageName="spotify"
+        >Gets name of the song and artist from Spotify URL, so you can look your
+        favorite song up.</ProjectCard
+    >
+    <ProjectCard
+        title="RAID: World War II Files"
+        url="https://raid.detta.dev/"
+        tags={['Web development', 'NextJS', 'Steam API', 'TypeScript']}
+        imageName="raid"
+    >
+        Website that displays your statistics in <a
+            href="https://store.steampowered.com/app/414740/RAID_World_War_II/"
+            >RAID: World War II</a
+        >, made with NextJS.</ProjectCard
+    >
+    <ProjectCard title="rcbanks.net" url="http://rcbanks.net/" tags={['Web development', 'Astro']}
+        >Recreation of a website seen in one of the cutscenes in
+        <a href="https://store.steampowered.com/app/2933080/Crime_Boss_Rockay_City/">Crime Boss: Rockay City</a>.
+    </ProjectCard>
+    <ProjectCard
+        title="Hoolidetta.com"
+        url="https://hoolidetta.com/"
+        tags={['Web development', 'Astro']}>Website for me and my friend Hooligan.</ProjectCard
+    >
+</div>
+
+<style>
+    div {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1em;
+    }
+</style>

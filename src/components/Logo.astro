@@ -1,10 +1,11 @@
 <svg
     xmlns="http://www.w3.org/2000/svg"
-    width="550"
-    height="400"
+    width="352"
+    height="256"
     version="1.1"
     viewBox="-365 -80 730 1050"
-    id="logo"
+    class="logo"
+    data-logo
 >
     <g data-animatable-logo class="shake reverse">
         <polygon
@@ -42,7 +43,7 @@
 </svg>
 
 <script>
-    const logo = document.getElementById('logo');
+    const logo = document.querySelector('[data-logo]');
     const animatingElements = document.querySelectorAll(
         '[data-animatable-logo]'
     );
@@ -94,5 +95,8 @@
     }
     .reverse {
         --angle: -2.5deg;
+    }
+    .logo {
+        margin-top: 20px;
     }
 </style>

@@ -1,11 +1,57 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Logo from '../components/Logo.astro';
+import ProjectList from '../components/ProjectList.astro';
 ---
 
-<Layout title="Welcome to Astro.">
-	<Logo />
+<Layout title="Home of Detta.dev">
+    <div class="container">
+        <header>
+            <Logo />
+            <h1>Detta.dev</h1>
+            <p>Home of Punished Bernadetta</p>
+            <p>Full-stack developer, modder</p>
+        </header>
+        <main>
+            <div>
+                <h2>My projects</h2>
+                <ProjectList />
+            </div>
+        </main>
+    </div>
 </Layout>
 
 <style>
+    .container {
+        background-color: var(--background-1);
+        max-width: 90ch;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+        justify-content: center;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+        padding: 1rem;
+        border-radius: 20px;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    header {
+        h1 {
+            font-size: 3rem;
+            margin: 0;
+        }
+
+        p {
+            font-size: 1rem;
+            margin-bottom: 0.5em;
+            margin-top: 0;
+        }
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
 </style>
