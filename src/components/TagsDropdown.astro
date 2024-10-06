@@ -5,15 +5,14 @@ interface Props {
 
 const { tags } = Astro.props;
 ---
+
 <div>
     <div class="accordion">
         <ul>
-            {tags.toSpliced(0, 1).map((tag) => (
-                <li class="tag">{tag}</li>
-            ))}
+            {tags.toSpliced(0, 1).map((tag) => <li class="tag">{tag}</li>)}
         </ul>
     </div>
-    <div class="tag">{tags[0]}</button>
+    <div class="tag opener">{tags[0]}</div>
 </div>
 
 <style>
@@ -38,10 +37,20 @@ const { tags } = Astro.props;
         font-size: 16px;
     }
     .tag:before {
-        content: "●";
+        content: '●';
         position: absolute;
         left: 6px;
         top: 0;
+    }
+    .opener:before {
+        content: '▶';
+        font-size: 0.9em;
+        top: 3px;
+        transition: rotate 0.25s, left 0.25s;
+    }
+    div:hover .opener:before {
+        rotate: -90deg;
+        left: 4px;
     }
     .accordion {
         position: absolute;
@@ -56,7 +65,7 @@ const { tags } = Astro.props;
         padding: 0;
         display: grid;
         gap: 2px;
-        margin-bottom: 2px;
+        margin: 0 0 4px 0;
         overflow: hidden;
     }
 </style>

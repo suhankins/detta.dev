@@ -1,15 +1,18 @@
 ---
 import Image from 'astro/components/Image.astro';
 import TagsDropdown from './TagsDropdown.astro';
+import ProjectLink from './ProjectLink.astro';
+import { map } from 'astro:schema';
 
 interface Props {
     title: string;
     url?: string;
     tags?: string[];
     imageName?: string;
+    links?: { type: 'github', url: string }[];
 }
 
-const { title, url, tags, imageName } = Astro.props;
+const { title, url, tags, imageName, links } = Astro.props;
 ---
 
 <article class:list={{ 'short': !imageName }}>
@@ -29,6 +32,7 @@ const { title, url, tags, imageName } = Astro.props;
                 alt=""
                 width={350}
                 height={184}
+                class="image"
             />
         </>)
     }
@@ -36,7 +40,7 @@ const { title, url, tags, imageName } = Astro.props;
         <h3>
             {
                 url ? (
-                    <a href={url} target="_blank">
+                    <a href={url} target="_blank" rel="noopener">
                         {title}
                     </a>
                 ) : (
@@ -51,6 +55,7 @@ const { title, url, tags, imageName } = Astro.props;
                     <TagsDropdown tags={tags} />
                 )
             }
+            {links && links.map(link => <ProjectLink url={link.url} type={link.type} />)}
         </footer>
     </div>
 </article>
@@ -69,7 +74,7 @@ const { title, url, tags, imageName } = Astro.props;
         color: transparent;
         background-color: var(--text-color);
     }
-    a:hover {
+    a:is(:hover, :focus, :active) {
         background-image: linear-gradient(to top, var(--tag-background-1),var(--text-color));
         background-clip: text;
         color: transparent;
@@ -79,6 +84,9 @@ const { title, url, tags, imageName } = Astro.props;
         border-radius: 10px;
         display: flex;
         position: relative;
+    }
+    .image, .background-container {
+        border-radius: 10px 0 0 10px;
     }
     .short {
         max-width: calc(50% - 10px);
@@ -98,7 +106,7 @@ const { title, url, tags, imageName } = Astro.props;
     .background {
         scale: 1.5 1.1;
         filter: blur(50px);
-        opacity: 0.8;
+        opacity: 0.7;
         position: absolute;
         left: 0
     }
@@ -116,5 +124,7 @@ const { title, url, tags, imageName } = Astro.props;
     footer {
         text-align: left;
         margin-top: auto;
+        display: flex;
+        height: 1.5em;
     }
 </style>
