@@ -37,7 +37,7 @@ const { title, url, tags, imageName, links } = Astro.props;
         </>)
     }
     <div class="description">
-        <h3>
+        <h2>
             {
                 url ? (
                     <a href={url} target="_blank" rel="noopener">
@@ -47,7 +47,7 @@ const { title, url, tags, imageName, links } = Astro.props;
                     title
                 )
             }
-        </h3>
+        </h2>
         <p><slot /></p>
         <footer>
             {
@@ -61,7 +61,7 @@ const { title, url, tags, imageName, links } = Astro.props;
 </article>
 
 <style>
-    h3 {
+    h2 {
         color: var(--text-color);
         font-weight: bolder;
         font-size: 2rem;
