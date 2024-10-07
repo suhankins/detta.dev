@@ -1,0 +1,41 @@
+---
+import Layout from './Layout.astro';
+
+const { frontmatter } = Astro.props;
+---
+
+<Layout title="Home of Detta.dev">
+    <div class="blog-container">
+        <header>
+            <h1>{frontmatter.title}</h1>
+            <p>Published: <time datetime={frontmatter.pubDate}>{new Date(frontmatter.pubDate).toLocaleDateString('uk')}</time></p>
+            <p><i>{frontmatter.description}</i></p>
+            <ul>{frontmatter.tags.map((tag: string) => <li class="tag">{tag}</li>)}</ul>
+            <hr />
+        </header>
+        <main>
+            <slot />
+        </main>
+    </div>
+</Layout>
+
+<style is:global>
+    .blog-container {
+        font-size: 1.2rem;
+    }
+    img {
+        width: 100%;
+    }
+    p:has(img) em {
+        width: 100%;
+        display: block;
+        text-align: center;
+    }
+    video {
+        width: 100%;
+    }
+    ul {
+        padding: 0;
+        margin: 0 0 4px 0;
+    }
+</style>

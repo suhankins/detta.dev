@@ -17,7 +17,9 @@ const { title } = Astro.props;
 		<title>{title}</title>
 	</head>
 	<body>
-		<slot />
+		<div class="container">
+			<slot />
+		</div>
 	</body>
 </html>
 <style is:global>
@@ -44,5 +46,34 @@ const { title } = Astro.props;
     }
     a:visited {
         color: inherit;
+    }
+	.container {
+        background-color: var(--background-1);
+        max-width: 90ch;
+        width: 100%;
+        margin-left: 1rem;
+        margin-right: 1rem;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+        padding: 1rem;
+        border-radius: 20px;
+    }
+	.tag {
+        background-color: var(--tag-background-1);
+        display: inline;
+        padding: 2px 8px 2px 20px;
+        border-radius: 99999999px;
+        position: relative;
+        white-space: nowrap;
+        text-shadow: 0px 0px 5px #000;
+        color: var(--text-color);
+        border: none;
+        font-size: 16px;
+    }
+    .tag:before {
+        content: '●';
+        position: absolute;
+        left: 6px;
+        top: 0;
     }
 </style>

@@ -6,7 +6,7 @@ import SocialMediaLinks from '../components/SocialMediaLinks.astro';
 ---
 
 <Layout title="Home of Detta.dev">
-    <div class="container">
+    <div class="homepage">
         <header>
             <Logo />
             <h1>Detta.dev</h1>
@@ -21,22 +21,12 @@ import SocialMediaLinks from '../components/SocialMediaLinks.astro';
 </Layout>
 
 <style>
-    .container {
-        background-color: var(--background-1);
-        max-width: 90ch;
-        width: 100%;
-        margin-left: 1rem;
-        margin-right: 1rem;
+    .homepage {
         display: flex;
         justify-content: center;
-        margin-top: 2rem;
-        margin-bottom: 2rem;
-        padding: 1rem;
-        border-radius: 20px;
         flex-direction: column;
         text-align: center;
     }
-
     header {
         h1 {
             font-size: 3rem;
@@ -45,8 +35,9 @@ import SocialMediaLinks from '../components/SocialMediaLinks.astro';
 
         p {
             font-size: 1rem;
-            margin-bottom: 0.5em;
+            margin-bottom: 24px;
             margin-top: 0;
         }
+        margin-bottom: 1em;
     }
 </style>
