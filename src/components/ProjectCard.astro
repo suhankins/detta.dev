@@ -85,14 +85,15 @@ const { title, url, tags, imageName, links } = Astro.props;
         display: flex;
         position: relative;
     }
+    .image {
+        height: 100%;
+        object-fit: cover;
+    }
     .image, .background-container {
         border-radius: 10px 0 0 10px;
     }
     .short {
         max-width: calc(50% - 10px);
-        width: 100%;
-    }
-    .short .description {
         width: 100%;
     }
     .description {
@@ -126,5 +127,26 @@ const { title, url, tags, imageName, links } = Astro.props;
         margin-top: auto;
         display: flex;
         height: 1.5em;
+    }
+    @media screen and (max-width: 680px) {
+        article {
+            flex-direction: column;
+            justify-content: center;
+        }
+        .short {
+            max-width: 100%;
+        }
+        .image, .background-container {
+            border-radius: 10px 10px 0 0;
+        }
+        .image {
+            width: 100%;
+        }
+        .background {
+            scale: 1.1 1.5;
+            filter: blur(50px);
+            right: 0;
+            top: 0;
+        }
     }
 </style>

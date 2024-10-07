@@ -12,7 +12,7 @@ const { tags } = Astro.props;
             {tags.toSpliced(0, 1).map((tag) => <li class="tag">{tag}</li>)}
         </ul>
     </div>
-    <div class="tag opener">{tags[0]}</div>
+    <button class="tag opener" aria-label="Open tags" class="opener">{tags[0]}</button>
 </div>
 
 <style>
@@ -21,7 +21,7 @@ const { tags } = Astro.props;
         position: relative;
         display: inline-block;
     }
-    div:not(:hover) .accordion {
+    div:not(:is(:hover, :active, :focus, :has(.opener:is(:hover, :active, :focus)))) .accordion {
         grid-template-rows: 0fr;
     }
     .tag {
@@ -48,7 +48,7 @@ const { tags } = Astro.props;
         top: 3px;
         transition: rotate 0.25s, left 0.25s;
     }
-    div:hover .opener:before {
+    div:is(:hover, :active, :focus, :has(.opener:is(:hover, :active, :focus))) .opener:before {
         rotate: -90deg;
         left: 4px;
     }
