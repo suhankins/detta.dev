@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Logo from '../components/Logo.astro';
 import ProjectList from '../components/ProjectList.astro';
+import SocialMediaLinks from '../components/SocialMediaLinks.astro';
 ---
 
 <Layout title="Home of Detta.dev">
@@ -9,13 +10,14 @@ import ProjectList from '../components/ProjectList.astro';
         <header>
             <Logo />
             <h1>Detta.dev</h1>
-            <p>Home of Punished Bernadetta</p>
             <p>Full-stack developer, modder</p>
+            <SocialMediaLinks />
         </header>
         <main>
             <div>
                 <h2>My projects</h2>
                 <ProjectList />
+                <p>...and more!</p>
             </div>
         </main>
     </div>

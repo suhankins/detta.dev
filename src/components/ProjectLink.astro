@@ -1,21 +1,24 @@
 ---
-import GithubPath from './GithubPath.astro';
+import GithubPath, { viewbox as githubViewbox } from './GithubPath.astro';
+import MwsPath, { viewbox as mwsViewbox } from './MwsPath.astro';
 
 interface Props {
-    type: 'github';
+    type: 'github' | 'modworkshop';
     url: string;
     size?: number;
 }
 
-const { url, size } = Astro.props;
+const { url, size, type } = Astro.props;
 const iconSize = `${size ?? 32}px`;
+const Icon = type === 'github' ? GithubPath : MwsPath;
+const viewbox = type === 'github' ? githubViewbox : mwsViewbox;
 ---
 
 <a href={url} target="_blank" rel="noopener" aria-label="Project on GitHub">
     <svg
         width={iconSize}
         height={iconSize}
-        viewBox="0 0 98 96"
+        viewBox={viewbox}
         xmlns="http://www.w3.org/2000/svg"
         aria-hidden="true"
     >
@@ -25,7 +28,7 @@ const iconSize = `${size ?? 32}px`;
                 <stop offset="100%" stop-color="var(--tag-background-1)"></stop>
             </linearGradient>
         </defs>
-        <GithubPath />
+        <Icon />
     </svg>
 </a>
 
