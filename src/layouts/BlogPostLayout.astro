@@ -5,18 +5,37 @@ const { frontmatter } = Astro.props;
 ---
 
 <Layout title="Home of Detta.dev">
-    <div class="blog-container">
-        <header>
-            <h1>{frontmatter.title}</h1>
-            <p>Published: <time datetime={frontmatter.pubDate}>{new Date(frontmatter.pubDate).toLocaleDateString('uk')}</time></p>
-            <p><i>{frontmatter.description}</i></p>
-            <ul>{frontmatter.tags.map((tag: string) => <li class="tag">{tag}</li>)}</ul>
-            <hr />
-        </header>
-        <main>
-            <slot />
-        </main>
-    </div>
+    {
+        frontmatter.released ? (
+            <div class="blog-container">
+                <header>
+                    <h1>{frontmatter.title}</h1>
+                    <p>
+                        Published:{' '}
+                        <time datetime={frontmatter.pubDate}>
+                            {new Date(frontmatter.pubDate).toLocaleDateString(
+                                'uk'
+                            )}
+                        </time>
+                    </p>
+                    <p>
+                        <i>{frontmatter.description}</i>
+                    </p>
+                    <ul>
+                        {frontmatter.tags.map((tag: string) => (
+                            <li class="tag">{tag}</li>
+                        ))}
+                    </ul>
+                    <hr />
+                </header>
+                <main>
+                    <slot />
+                </main>
+            </div>
+        ) : (
+            <h1>This article isn't ready yet!</h1>
+        )
+    }
 </Layout>
 
 <style is:global>
