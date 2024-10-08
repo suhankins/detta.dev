@@ -5,7 +5,10 @@ import Layout from './Layout.astro';
 const { frontmatter } = Astro.props;
 ---
 
-<Layout title={`${frontmatter.title} | detta.dev`}>
+<Layout
+    title={`${frontmatter.title} | detta.dev`}
+    description={frontmatter.description}
+>
     <div class="blog-container">
         <a href="/blog">&larr; Back to post archive</a>
         {
