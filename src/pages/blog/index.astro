@@ -1,0 +1,43 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const posts = Object.values(await import.meta.glob('./*.md', { eager: true }))
+    .filter((post: any) => !!post.frontmatter.released)
+    .sort((a: any, b: any) => a.frontmatter.pubDate - b.frontmatter.pubDate);
+---
+
+<Layout title="Blog Posts | detta.dev">
+    <h1>Post Archive:</h1>
+    <ul>
+        {
+            posts.map((post: any) => (
+                <li>
+                    <p>
+                        <time datetime={post.frontmatter.pubDate}>
+                            {new Date(
+                                post.frontmatter.pubDate
+                            ).toLocaleDateString('uk')}
+                        </time>{' '}
+                        - <a href={post.url} class="blog-title">{post.frontmatter.title}</a>
+                    </p>
+                    <p>
+                        <em>{post.frontmatter.description}</em>
+                    </p>
+                </li>
+            ))
+        }
+    </ul>
+</Layout>
+
+<style>
+    .blog-title {
+        font-size: 1.2em;
+    }
+    ul {
+        margin-left: 1em;
+    }
+    p {
+        margin-bottom: 0.5em;
+        margin-top: 0;
+    }
+</style>

@@ -4,7 +4,7 @@ import Layout from './Layout.astro';
 const { frontmatter } = Astro.props;
 ---
 
-<Layout title="Home of Detta.dev">
+<Layout title={`${frontmatter.title} | detta.dev`}>
     {
         frontmatter.released ? (
             <div class="blog-container">
