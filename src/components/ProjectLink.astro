@@ -3,34 +3,40 @@ import GithubPath, { viewbox as githubViewbox } from './GithubPath.astro';
 import MwsPath, { viewbox as mwsViewbox } from './MwsPath.astro';
 import BlogPath, { viewbox as blogViewbox } from './BlogPath.astro';
 
+const TYPES = {
+    github: {
+        path: GithubPath,
+        viewbox: githubViewbox,
+    },
+    modworkshop: {
+        path: MwsPath,
+        viewbox: mwsViewbox,
+    },
+    blog: {
+        path: BlogPath,
+        viewbox: blogViewbox,
+    },
+};
+
 interface Props {
     type: keyof typeof TYPES;
     url: string;
     size?: number;
+    sameTab?: boolean;
 }
 
-const TYPES = {
-    github: {
-        path: GithubPath,
-        viewbox: githubViewbox
-    },
-    modworkshop: {
-        path: MwsPath,
-        viewbox: mwsViewbox
-    },
-    blog: {
-        path: BlogPath,
-        viewbox: blogViewbox
-    }
-}
-
-const { url, size, type } = Astro.props;
+const { url, size, type, sameTab } = Astro.props;
 const iconSize = `${size ?? 32}px`;
 const Icon = TYPES[type].path;
 const viewbox = TYPES[type].viewbox;
 ---
 
-<a href={url} target="_blank" rel="noopener" aria-label="Project on GitHub">
+<a
+    href={url}
+    target={sameTab ? undefined : '_blank'}
+    rel={sameTab ? undefined : 'noopener'}
+    aria-label={`Project on ${type}`}
+>
     <svg
         width={iconSize}
         height={iconSize}

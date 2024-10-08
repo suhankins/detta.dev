@@ -1,4 +1,5 @@
 ---
+import Footer from '../../components/Footer.astro';
 import Layout from '../../layouts/Layout.astro';
 
 const posts = Object.values(await import.meta.glob('./*.md', { eager: true }))
@@ -27,6 +28,7 @@ const posts = Object.values(await import.meta.glob('./*.md', { eager: true }))
             ))
         }
     </ul>
+    <Footer />
 </Layout>
 
 <style>

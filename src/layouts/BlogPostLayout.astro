@@ -1,44 +1,51 @@
 ---
+import Footer from '../components/Footer.astro';
 import Layout from './Layout.astro';
 
 const { frontmatter } = Astro.props;
 ---
 
 <Layout title={`${frontmatter.title} | detta.dev`}>
-    {
-        frontmatter.released ? (
-            <div class="blog-container">
-                <header>
-                    <h1>{frontmatter.title}</h1>
-                    <p>
-                        Published:{' '}
-                        <time datetime={frontmatter.pubDate}>
-                            {new Date(frontmatter.pubDate).toLocaleDateString(
-                                'uk'
-                            )}
-                        </time>
-                    </p>
-                    <p>
-                        <i>{frontmatter.description}</i>
-                    </p>
-                    <ul>
-                        {frontmatter.tags.map((tag: string) => (
-                            <li class="tag">{tag}</li>
-                        ))}
-                    </ul>
-                    <hr />
-                </header>
-                <main>
-                    <slot />
-                </main>
-            </div>
-        ) : (
-            <h1>This article isn't ready yet!</h1>
-        )
-    }
+    <div class="blog-container">
+        {
+            frontmatter.released ? (
+                <>
+                    <header>
+                        <h1>{frontmatter.title}</h1>
+                        <p>
+                            Published:{' '}
+                            <time datetime={frontmatter.pubDate}>
+                                {new Date(
+                                    frontmatter.pubDate
+                                ).toLocaleDateString('uk')}
+                            </time>
+                        </p>
+                        <p>
+                            <i>{frontmatter.description}</i>
+                        </p>
+                        <ul>
+                            {frontmatter.tags.map((tag: string) => (
+                                <li class="tag">{tag}</li>
+                            ))}
+                        </ul>
+                        <hr />
+                    </header>
+                    <main>
+                        <slot />
+                    </main>
+                </>
+            ) : (
+                <h1>This article isn't ready yet!</h1>
+            )
+        }
+        <Footer />
+    </div>
 </Layout>
 
 <style is:global>
+    h1 {
+        margin-top: 0.5em;
+    }
     .blog-container {
         font-size: 1.2rem;
     }
