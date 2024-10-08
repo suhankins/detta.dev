@@ -8,7 +8,7 @@ interface Props {
     url?: string;
     tags?: string[];
     imageName?: string;
-    links?: { type: 'github', url: string }[];
+    links?: { type: 'github' | 'blog' | 'modworkshop', url: string }[];
 }
 
 const { title, url, tags, imageName, links } = Astro.props;
@@ -54,7 +54,9 @@ const { title, url, tags, imageName, links } = Astro.props;
                     <TagsDropdown tags={tags} />
                 )
             }
-            {links && links.map(link => <ProjectLink url={link.url} type={link.type} />)}
+            <div class="links">
+                {links && links.map(link => <ProjectLink url={link.url} type={link.type} />)}
+            </div>
         </footer>
     </div>
 </article>
@@ -94,6 +96,9 @@ const { title, url, tags, imageName, links } = Astro.props;
     .short {
         max-width: calc(50% - 10px);
         width: 100%;
+    }
+    .links {
+        margin-left: auto;
     }
     .description {
         margin-left: 1ch;

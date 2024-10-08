@@ -1,17 +1,33 @@
 ---
 import GithubPath, { viewbox as githubViewbox } from './GithubPath.astro';
 import MwsPath, { viewbox as mwsViewbox } from './MwsPath.astro';
+import BlogPath, { viewbox as blogViewbox } from './BlogPath.astro';
 
 interface Props {
-    type: 'github' | 'modworkshop';
+    type: keyof typeof TYPES;
     url: string;
     size?: number;
 }
 
+const TYPES = {
+    github: {
+        path: GithubPath,
+        viewbox: githubViewbox
+    },
+    modworkshop: {
+        path: MwsPath,
+        viewbox: mwsViewbox
+    },
+    blog: {
+        path: BlogPath,
+        viewbox: blogViewbox
+    }
+}
+
 const { url, size, type } = Astro.props;
 const iconSize = `${size ?? 32}px`;
-const Icon = type === 'github' ? GithubPath : MwsPath;
-const viewbox = type === 'github' ? githubViewbox : mwsViewbox;
+const Icon = TYPES[type].path;
+const viewbox = TYPES[type].viewbox;
 ---
 
 <a href={url} target="_blank" rel="noopener" aria-label="Project on GitHub">
@@ -34,9 +50,7 @@ const viewbox = type === 'github' ? githubViewbox : mwsViewbox;
 
 <style>
     a {
-        margin-left: auto;
         position: relative;
-        width: 32px;
         bottom: 6px;
         text-decoration: none;
     }
