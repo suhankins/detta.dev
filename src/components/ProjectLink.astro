@@ -15,6 +15,7 @@ const TYPES = {
     blog: {
         path: BlogPath,
         viewbox: blogViewbox,
+        sameTab: true
     },
 };
 
@@ -22,13 +23,13 @@ interface Props {
     type: keyof typeof TYPES;
     url: string;
     size?: number;
-    sameTab?: boolean;
 }
 
-const { url, size, type, sameTab } = Astro.props;
+const { url, size, type } = Astro.props;
 const iconSize = `${size ?? 32}px`;
 const Icon = TYPES[type].path;
 const viewbox = TYPES[type].viewbox;
+const sameTab = 'sameTab' in TYPES[type];
 ---
 
 <a
