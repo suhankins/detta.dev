@@ -8,6 +8,7 @@ const posts = Object.values(await import.meta.glob('./*.md', { eager: true }))
 ---
 
 <Layout title="Blog Posts | detta.dev">
+    <a href="/">&larr; Back to homepage</a>
     <h1>Post Archive:</h1>
     <ul>
         {
