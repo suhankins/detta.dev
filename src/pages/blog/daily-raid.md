@@ -16,7 +16,7 @@ The issue is, after getting every achievement and maxed out every weapon, the on
 
 And then I thought that another issue the game has is challenge cards - they were supposed to shake up your gameplay every now and then, change how things are, but due to their limited number and lackluster effects, they were rarely if ever used.
 
-![](/daily-raid/414740_20241003173510_1.png)
+![Screenshot showing card "Take the cannoli". Positive effect: No movement penalties for carrying heavy objects. Negative effect: Enemies loot drop chance reduced by 15%. Can only be used in Operations.](/daily-raid/414740_20241003173510_1.png)
 *Until recently you only got 3 challenge cards a day if you got lucky, and imagine if you got this one. Positive effect sounds very good for Gold Rush and Trainwreck raids, but then you see that it's an Operation card. There's not a single operation where you carry anything for a meaningful amount of time.*
 
 ---
@@ -25,13 +25,13 @@ To slightly alleviate these problems, I thought of a simple concept: Daily Raid.
 
 It was fun building UI for it, trying to fit all the things I need neatly into the existing job selection menu, but then I had a complicated problem. You see, one of my design goals was for Daily Raid to award to everyone who plays with you, no matter if they have the mod or not. I wanted this because RAID has a tiny player base, and I don't want anyone to miss out on a little fun my mod brings to the game. But this meant that I had to come up with some way to give other players gold.
 
-
+<p>
 <video controls width="720" muted>
   <source src="/daily-raid/2022-07-14_03-58-29.mp4" type="video/mp4" />
   <source src="/daily-raid/2022-07-14_03-58-29.webm" type="video/webm" />
 </video>
-
-*After I finished adding a button for a Daily Raid in the menu, I started working on limiting difficulty, because I thought it'd be lame if you could collect it on Easy. During development I thought it should only be collected on Hard, but shortly after release I added ability to collect it on Very Hard as well.*
+<em>After I finished adding a button for a Daily Raid in the menu, I started working on limiting difficulty, because I thought it'd be lame if you could collect it on Easy. During development I thought it should only be collected on Hard, but shortly after release I added ability to collect it on Very Hard as well.</em>
+</p>
 
 ![](/daily-raid/daily_raid_0.png)
 *Working on button design, adding text below instead of difficulty. Shortly after sharing this design, Rex, one of the M.U.G. team members who work on the game right now, suggested renaming it to Daily Bounty and proposed an icon that is still used today.*
