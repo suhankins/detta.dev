@@ -46,8 +46,8 @@ const viewbox = TYPES[type].viewbox;
     >
         <defs>
             <linearGradient id="gradient" x2="0" y2="1">
-                <stop offset="0%" stop-color="var(--text-color)"></stop>
-                <stop offset="100%" stop-color="var(--tag-background-1)"></stop>
+                <stop offset="0%" stop-color="var(--icon-hightlight-top)"></stop>
+                <stop offset="100%" stop-color="var(--icon-hightlight-bottom)"></stop>
             </linearGradient>
         </defs>
         <Icon />
@@ -61,7 +61,7 @@ const viewbox = TYPES[type].viewbox;
         text-decoration: none;
     }
     a svg {
-        fill: #fff;
+        fill: var(--icon-color);
     }
     a:is(:hover, a:active, a:focus) svg {
         fill: url(#gradient);
