@@ -1,14 +1,14 @@
 ---
 import Image from 'astro/components/Image.astro';
 import TagsDropdown from './TagsDropdown.astro';
-import ProjectLink from './ProjectLink.astro';
+import ProjectLink, { type Props as ProjectLinkProps } from './ProjectLink.astro';
 
 interface Props {
     title: string;
     tags?: string[];
     imageName?: string;
     links?: {
-        type: 'github' | 'blog' | 'modworkshop' | 'website' | 'itch';
+        type: ProjectLinkProps['type'];
         url: string;
     }[];
 }
