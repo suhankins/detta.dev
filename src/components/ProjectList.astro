@@ -5,10 +5,13 @@ import ProjectCard from './ProjectCard.astro';
 <div>
     <ProjectCard
         title="Agent Up In The Sky"
-        url="https://punishedbernadetta.itch.io/agent-up-in-the-sky"
         tags={['Game development', 'Godot']}
         imageName="agent"
         links={[
+            {
+                type: 'itch',
+                url: 'https://punishedbernadetta.itch.io/agent-up-in-the-sky',
+            },
             {
                 type: 'github',
                 url: 'https://github.com/suhankins/up-in-the-sky',
@@ -19,10 +22,10 @@ import ProjectCard from './ProjectCard.astro';
     >
     <ProjectCard
         title="Ducklake"
-        url="https://ducklake.detta.dev/"
         tags={['Game development', 'PWA', 'Three.js', 'TypeScript']}
         imageName="ducklake"
         links={[
+            { type: 'website', url: 'https://ducklake.detta.dev/' },
             { type: 'github', url: 'https://github.com/suhankins/ducklake' },
         ]}
         >Lake full of ducks you can feed, made with three.js and installable as
@@ -30,10 +33,13 @@ import ProjectCard from './ProjectCard.astro';
     >
     <ProjectCard
         title="Get Spotify Song Name"
-        url="https://spotify.detta.dev/"
         tags={['Web development', 'PWA', 'Astro', 'TypeScript']}
         imageName="spotify"
         links={[
+            {
+                type: 'website',
+                url: 'https://spotify.detta.dev/',
+            },
             {
                 type: 'github',
                 url: 'https://github.com/suhankins/get-spotify-song-name',
@@ -44,10 +50,13 @@ import ProjectCard from './ProjectCard.astro';
     >
     <ProjectCard
         title="RAID: World War II Files"
-        url="https://raid.detta.dev/"
         tags={['Web development', 'NextJS', 'Steam API', 'TypeScript']}
         imageName="raid"
         links={[
+            {
+                type: 'website',
+                url: 'https://raid.detta.dev/',
+            },
             {
                 type: 'github',
                 url: 'https://github.com/suhankins/raid-ww2-files',
@@ -62,10 +71,12 @@ import ProjectCard from './ProjectCard.astro';
     >
     <ProjectCard
         title="keycap_config decoder"
-        url="https://github.com/suhankins/keycap_config_decoder"
         tags={['Decompilation', 'Deno', 'TypeScript']}
         links={[
-            { type: 'github', url: 'https://github.com/suhankins/keycap_config_decoder' },
+            {
+                type: 'github',
+                url: 'https://github.com/suhankins/keycap_config_decoder',
+            },
         ]}
     >
         Tool to decode and encode keycap_config.xml file, found in a bunch of
@@ -73,10 +84,10 @@ import ProjectCard from './ProjectCard.astro';
     </ProjectCard>
     <ProjectCard
         title="Daily Bounty"
-        url="https://modworkshop.net/mod/38718"
         tags={['Modding RAID:WW2', 'Lua']}
         links={[
             { type: 'blog', url: '/blog/daily-raid' },
+            { type: 'modworkshop', url: 'https://modworkshop.net/mod/38718' },
             { type: 'github', url: 'https://github.com/suhankins/Daily-raid' },
         ]}
     >
@@ -85,9 +96,12 @@ import ProjectCard from './ProjectCard.astro';
     </ProjectCard>
     <ProjectCard
         title="PD2Builder loader"
-        url="https://modworkshop.net/mod/33534"
         tags={['Modding PD2', 'Lua']}
         links={[
+            {
+                type: 'modworkshop',
+                url: 'https://modworkshop.net/mod/33534',
+            },
             {
                 type: 'github',
                 url: 'https://github.com/suhankins/pd2builder-loader',
@@ -99,16 +113,18 @@ import ProjectCard from './ProjectCard.astro';
     </ProjectCard>
     <ProjectCard
         title="Argos III Display"
-        url="https://modworkshop.net/mod/36496"
         tags={['Modding PD2', 'Lua']}
+        links={[
+            { type: 'modworkshop', url: 'https://modworkshop.net/mod/36496' },
+        ]}
     >
         Working ammo counter for Argos III shotgun's display.
     </ProjectCard>
     <ProjectCard
         title="rcbanks.net"
-        url="http://rcbanks.net/"
         tags={['Web development', 'Astro']}
         links={[
+            { type: 'website', url: 'http://rcbanks.net/' },
             { type: 'github', url: 'https://github.com/suhankins/rcbanks' },
         ]}
         >Recreation of a website seen in one of the cutscenes in
@@ -120,9 +136,9 @@ import ProjectCard from './ProjectCard.astro';
     </ProjectCard>
     <ProjectCard
         title="Hoolidetta.com"
-        url="https://hoolidetta.com/"
         tags={['Web development', 'Astro']}
         links={[
+            { type: 'website', url: 'https://hoolidetta.com/' },
             { type: 'github', url: 'https://github.com/suhankins/hoolidetta' },
         ]}
     >

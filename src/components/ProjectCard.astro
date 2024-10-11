@@ -5,57 +5,53 @@ import ProjectLink from './ProjectLink.astro';
 
 interface Props {
     title: string;
-    url?: string;
     tags?: string[];
     imageName?: string;
-    links?: { type: 'github' | 'blog' | 'modworkshop', url: string }[];
+    links?: {
+        type: 'github' | 'blog' | 'modworkshop' | 'website' | 'itch';
+        url: string;
+    }[];
 }
 
-const { title, url, tags, imageName, links } = Astro.props;
+const { title, tags, imageName, links } = Astro.props;
 ---
 
-<article class:list={{ 'short': !imageName }}>
+<article class:list={{ short: !imageName }}>
     {
-        imageName && (<>
-            <div class="background-container">
+        imageName && (
+            <>
+                <div class="background-container" role="presentation">
+                    <Image
+                        src={`/screenshots/${imageName}.png`}
+                        alt=""
+                        width={350}
+                        height={184}
+                        class="background"
+                    />
+                </div>
                 <Image
                     src={`/screenshots/${imageName}.png`}
                     alt=""
                     width={350}
                     height={184}
-                    class="background"
+                    class="image"
+                    role="presentation"
                 />
-            </div>
-            <Image
-                src={`/screenshots/${imageName}.png`}
-                alt=""
-                width={350}
-                height={184}
-                class="image"
-            />
-        </>)
+            </>
+        )
     }
     <div class="description">
-        <h2>
-            {
-                url ? (
-                    <a href={url} target="_blank" rel="noopener">
-                        {title}
-                    </a>
-                ) : (
-                    title
-                )
-            }
-        </h2>
+        <h2>{title}</h2>
         <p><slot /></p>
         <footer>
-            {
-                tags && (
-                    <TagsDropdown tags={tags} />
-                )
-            }
+            {tags && <TagsDropdown tags={tags} />}
             <div class="links">
-                {links && links.map(link => <ProjectLink url={link.url} type={link.type} />)}
+                {
+                    links &&
+                        links.map((link) => (
+                            <ProjectLink url={link.url} type={link.type} />
+                        ))
+                }
             </div>
         </footer>
     </div>
@@ -67,18 +63,7 @@ const { title, url, tags, imageName, links } = Astro.props;
         font-weight: bolder;
         font-size: 2rem;
         margin: 0;
-    }
-    a {
         text-shadow: none;
-        text-decoration: underline;
-        background-clip: text;
-        color: transparent;
-        background-color: var(--text-color);
-    }
-    a:is(:hover, :focus, :active) {
-        background-image: linear-gradient(to top, var(--tag-background-1),var(--text-color));
-        background-clip: text;
-        color: transparent;
     }
     article {
         background-color: var(--background-2);
@@ -90,7 +75,8 @@ const { title, url, tags, imageName, links } = Astro.props;
         height: 100%;
         object-fit: cover;
     }
-    .image, .background-container {
+    .image,
+    .background-container {
         border-radius: 10px 0 0 10px;
     }
     .short {
@@ -113,7 +99,7 @@ const { title, url, tags, imageName, links } = Astro.props;
         filter: blur(50px);
         mix-blend-mode: hue;
         position: absolute;
-        left: 0
+        left: 0;
     }
     .background-container {
         position: absolute;
@@ -140,7 +126,8 @@ const { title, url, tags, imageName, links } = Astro.props;
         .short {
             max-width: 100%;
         }
-        .image, .background-container {
+        .image,
+        .background-container {
             border-radius: 10px 10px 0 0;
         }
         .image {

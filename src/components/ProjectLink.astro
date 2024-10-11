@@ -1,7 +1,11 @@
 ---
-import GithubPath, { viewbox as githubViewbox } from './GithubPath.astro';
-import MwsPath, { viewbox as mwsViewbox } from './MwsPath.astro';
-import BlogPath, { viewbox as blogViewbox } from './BlogPath.astro';
+import GithubPath, { viewbox as githubViewbox } from './icons/GithubPath.astro';
+import MwsPath, { viewbox as mwsViewbox } from './icons/MwsPath.astro';
+import BlogPath, { viewbox as blogViewbox } from './icons/BlogPath.astro';
+import WebsitePath, {
+    viewbox as websiteViewbox,
+} from './icons/WebsitePath.astro';
+import ItchPath, { viewbox as itchViewbox } from './icons/ItchPath.astro';
 
 const TYPES = {
     github: {
@@ -15,7 +19,15 @@ const TYPES = {
     blog: {
         path: BlogPath,
         viewbox: blogViewbox,
-        sameTab: true
+        sameTab: true,
+    },
+    website: {
+        path: WebsitePath,
+        viewbox: websiteViewbox,
+    },
+    itch: {
+        path: ItchPath,
+        viewbox: itchViewbox,
     },
 };
 
@@ -47,8 +59,10 @@ const sameTab = 'sameTab' in TYPES[type];
     >
         <defs>
             <linearGradient id="gradient" x2="0" y2="1">
-                <stop offset="0%" stop-color="var(--icon-hightlight-top)"></stop>
-                <stop offset="100%" stop-color="var(--icon-hightlight-bottom)"></stop>
+                <stop offset="0%" stop-color="var(--icon-hightlight-top)"
+                ></stop>
+                <stop offset="100%" stop-color="var(--icon-hightlight-bottom)"
+                ></stop>
             </linearGradient>
         </defs>
         <Icon />
