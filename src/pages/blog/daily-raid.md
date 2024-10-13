@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/BlogPostLayout.astro
 title: "Daily Bounty for RAID: World War II"
-pubDate: 2024-10-03
+pubDate: 2024-10-08
 description: "Retrospective on development of Daily Bounty for RAID: World War II"
 tags:
   - Modding
