@@ -1,13 +1,15 @@
 ---
 import Image from 'astro/components/Image.astro';
 import TagsDropdown from './TagsDropdown.astro';
-import ProjectLink, { type Props as ProjectLinkProps } from './ProjectLink.astro';
+import ProjectLink, {
+    type Props as ProjectLinkProps,
+} from './ProjectLink.astro';
 
 interface Props {
     title: string;
     tags?: string[];
     imageName?: string;
-    links?: {
+    links: {
         type: ProjectLinkProps['type'];
         url: string;
     }[];
@@ -41,16 +43,17 @@ const { title, tags, imageName, links } = Astro.props;
         )
     }
     <div class="description">
-        <h2>{title}</h2>
+        <h2>
+            <a href={links[0].url} target="_blank" rel="noopener">{title}</a>
+        </h2>
         <p><slot /></p>
         <footer>
             {tags && <TagsDropdown tags={tags} />}
             <div class="links">
                 {
-                    links &&
-                        links.map((link) => (
-                            <ProjectLink url={link.url} type={link.type} />
-                        ))
+                    links.map((link) => (
+                        <ProjectLink url={link.url} type={link.type} />
+                    ))
                 }
             </div>
         </footer>
@@ -64,6 +67,22 @@ const { title, tags, imageName, links } = Astro.props;
         font-size: 2rem;
         margin: 0;
         text-shadow: none;
+    }
+    a {
+        text-shadow: none;
+        text-decoration: underline;
+        background-clip: text;
+        color: transparent;
+        background-color: var(--text-color);
+    }
+    a:is(:hover, :focus, :active) {
+        background-image: linear-gradient(
+            to top,
+            var(--tag-background-1),
+            var(--text-color)
+        );
+        background-clip: text;
+        color: transparent;
     }
     article {
         background-color: var(--background-2);
