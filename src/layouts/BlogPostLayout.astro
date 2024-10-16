@@ -16,7 +16,7 @@ const { frontmatter } = Astro.props;
                 <>
                     <header>
                         <h1>{frontmatter.title}</h1>
-                        <p>
+                        <p class="publish-date">
                             Published:{' '}
                             <time datetime={frontmatter.pubDate}>
                                 {new Date(
@@ -24,7 +24,7 @@ const { frontmatter } = Astro.props;
                                 ).toLocaleDateString('uk')}
                             </time>
                         </p>
-                        <p>
+                        <p class="description">
                             <i>{frontmatter.description}</i>
                         </p>
                         <ul>
@@ -51,10 +51,16 @@ const { frontmatter } = Astro.props;
         margin-top: 0.5em;
     }
     .blog-container {
-        font-size: 1.2rem;
+        font-size: 1.2em;
     }
     img {
         width: 100%;
+    }
+    .publish-date, .description {
+        text-indent: inherit;
+    }
+    p {
+        text-indent: 0.5em;
     }
     p:is(:has(img), :has(video)) em {
         width: 100%;
