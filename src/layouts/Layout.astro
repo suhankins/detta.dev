@@ -64,6 +64,11 @@ const { title, description } = Astro.props;
         color: var(--text-color);
         background-color: var(--background-0);
     }
+    *,
+    *::before,
+    *::after {
+        box-sizing: border-box;
+    }
     body {
         margin: 0;
         display: flex;
