@@ -6,7 +6,7 @@ interface Props {
 const { tags } = Astro.props;
 ---
 
-<div>
+<div class="dropdown-container">
     <div class="accordion">
         <ul>
             {tags.toSpliced(0, 1).map((tag) => <li class="tag">{tag}</li>)}
@@ -18,7 +18,7 @@ const { tags } = Astro.props;
 </div>
 
 <style>
-    div {
+    .dropdown-container {
         z-index: 3;
         position: relative;
         display: inline-block;
@@ -26,17 +26,18 @@ const { tags } = Astro.props;
     div:not(:is(:hover, :has(.opener:is(:active, :focus)))) .accordion {
         grid-template-rows: 0fr;
     }
+    .opener {
+        appearance: none;
+    }
     .opener:before {
         content: '▶';
         font-size: 0.9em;
         top: 2px;
-        transition:
-            rotate 0.25s,
-            left 0.25s;
+        left: 0.3em;
+        transition: rotate 0.25s;
     }
     div:is(:hover, :has(.opener:is(:active, :focus))) .opener:before {
         rotate: -90deg;
-        left: 4px;
     }
     .accordion {
         position: absolute;
