@@ -32,9 +32,9 @@ const { tags } = Astro.props;
     .opener:before {
         content: '▶';
         font-size: 0.9em;
-        top: 2px;
-        left: 0.3em;
+        left: 0.8em;
         transition: rotate 0.25s;
+        transform-origin: top left;
     }
     div:is(:hover, :has(.opener:is(:active, :focus))) .opener:before {
         rotate: -90deg;

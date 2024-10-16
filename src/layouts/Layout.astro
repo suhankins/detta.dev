@@ -16,6 +16,35 @@ const { title, description } = Astro.props;
         <meta name="viewport" content="width=device-width" />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <meta name="generator" content={Astro.generator} />
+        <link
+            rel="preload"
+            href="/fonts/firaSans/FiraSans-Regular.woff2"
+            as="font"
+            type="font/woff2"
+            crossorigin="anonymous"
+        />
+        <link
+            rel="preload"
+            href="/fonts/firaSans/FiraSans-Bold.woff2"
+            as="font"
+            type="font/woff2"
+            crossorigin="anonymous"
+        />
+        <link
+            rel="preload"
+            href="/fonts/firaSans/FiraSans-Italic.woff2"
+            as="font"
+            type="font/woff2"
+            crossorigin="anonymous"
+        />
+
+        <link
+            rel="preload"
+            href="/fonts/firaSans/FiraSans-BoldItalic.woff2"
+            as="font"
+            type="font/woff2"
+            crossorigin="anonymous"
+        />
         <title>{title}</title>
     </head>
     <body>
@@ -25,6 +54,42 @@ const { title, description } = Astro.props;
     </body>
 </html>
 <style is:global>
+    @font-face {
+        font-family: 'Fira Sans';
+        src:
+            local('Fira Sans'),
+            url('/fonts/firaSans/FiraSans-Regular.woff2') format('woff2');
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+    }
+    @font-face {
+        font-family: 'Fira Sans';
+        src:
+            local('Fira Sans'),
+            url('/fonts/firaSans/FiraSans-Bold.woff2') format('woff2');
+        font-weight: 700;
+        font-style: normal;
+        font-display: swap;
+    }
+    @font-face {
+        font-family: 'Fira Sans';
+        src:
+            local('Fira Sans'),
+            url('/fonts/firaSans/FiraSans-Italic.woff2') format('woff2');
+        font-weight: 400;
+        font-style: italic;
+        font-display: swap;
+    }
+    @font-face {
+        font-family: 'Fira Sans';
+        src:
+            local('Fira Sans'),
+            url('/fonts/firaSans/FiraSans-BoldItalic.woff2') format('woff2');
+        font-weight: 700;
+        font-style: italic;
+        font-display: swap;
+    }
     :root {
         --text-color: #e6edf3;
         --link-color: #ff0084;
@@ -60,9 +125,11 @@ const { title, description } = Astro.props;
         }
     }
     html {
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-family: 'Fira Sans', 'Segoe UI', Tahoma, Geneva, Verdana,
+            sans-serif;
         color: var(--text-color);
         background-color: var(--background-0);
+        line-height: 1.2;
     }
     *,
     *::before,
@@ -82,7 +149,7 @@ const { title, description } = Astro.props;
     }
     .container {
         background-color: var(--background-1);
-        max-width: 100ch;
+        max-width: 95ch;
         width: 100%;
         margin-left: 1rem;
         margin-right: 1rem;
@@ -106,7 +173,9 @@ const { title, description } = Astro.props;
     .tag:before {
         content: '●';
         position: absolute;
-        left: 6px;
-        top: 0;
+        font-size: 0.7em;
+        top: 50%;
+        left: 0.8em;
+        transform: translate(-50%, -50%);
     }
 </style>
