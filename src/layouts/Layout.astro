@@ -91,6 +91,9 @@ const { title, description } = Astro.props;
         font-display: swap;
     }
     :root {
+        --font-family: 'Fira Sans', 'Segoe UI', Tahoma, Geneva, Verdana,
+            sans-serif;
+
         --text-color: #e6edf3;
         --link-color: #ff0084;
         --footnote-color: #d8e2e8;
@@ -125,8 +128,7 @@ const { title, description } = Astro.props;
         }
     }
     html {
-        font-family: 'Fira Sans', 'Segoe UI', Tahoma, Geneva, Verdana,
-            sans-serif;
+        font-family: var(--font-family);
         color: var(--text-color);
         background-color: var(--background-0);
         line-height: 1.2;
@@ -177,5 +179,8 @@ const { title, description } = Astro.props;
         top: 50%;
         left: 0.8em;
         transform: translate(-50%, -50%);
+    }
+    button {
+        font-family: var(--font-family);
     }
 </style>
