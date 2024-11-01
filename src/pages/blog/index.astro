@@ -2,7 +2,7 @@
 import Footer from '../../components/Footer.astro';
 import Layout from '../../layouts/Layout.astro';
 
-const posts = Object.values(await import.meta.glob('./*.md', { eager: true }))
+const posts = Object.values(import.meta.glob('./*.md', { eager: true }))
     .filter((post: any) => !!post.frontmatter.released)
     .sort((a: any, b: any) => a.frontmatter.pubDate - b.frontmatter.pubDate);
 ---
@@ -20,7 +20,10 @@ const posts = Object.values(await import.meta.glob('./*.md', { eager: true }))
                                 post.frontmatter.pubDate
                             ).toLocaleDateString('uk')}
                         </time>{' '}
-                        - <a href={post.url} class="blog-title">{post.frontmatter.title}</a>
+                        -{' '}
+                        <a href={post.url} class="blog-title">
+                            {post.frontmatter.title}
+                        </a>
                     </p>
                     <p>
                         <em>{post.frontmatter.description}</em>
