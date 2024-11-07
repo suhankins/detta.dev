@@ -10,7 +10,13 @@ const { frontmatter } = Astro.props;
     description={frontmatter.description}
 >
     <div class="blog-container">
-        <a href="/blog">&larr; Back to post archive</a>
+        <div class="controls">
+            <a href="/blog">&larr; Back to post archive</a>
+            <label>
+                Enable bigger font
+                <input name="Enable bigger font" type="checkbox" />
+            </label>
+        </div>
         {
             frontmatter.released ? (
                 <>
@@ -47,10 +53,16 @@ const { frontmatter } = Astro.props;
 </Layout>
 
 <style is:global>
+    label {
+        margin-left: auto;
+    }
+    .controls {
+        display: flex;
+    }
     h1 {
         margin-top: 0.5em;
     }
-    .blog-container {
+    .blog-container:has(input:checked) {
         font-size: 1.2em;
     }
     img {
