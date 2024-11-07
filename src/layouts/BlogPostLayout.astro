@@ -33,7 +33,7 @@ const { frontmatter } = Astro.props;
                         <p class="description">
                             <i>{frontmatter.description}</i>
                         </p>
-                        <ul>
+                        <ul class="tags">
                             {frontmatter.tags.map((tag: string) => (
                                 <li class="tag">{tag}</li>
                             ))}
@@ -65,14 +65,20 @@ const { frontmatter } = Astro.props;
     .blog-container:has(input:checked) {
         font-size: 1.2em;
     }
+    p:has(img) {
+        text-align: center;
+    }
     img {
-        width: 100%;
+        max-width: 100%;
     }
     .publish-date, .description {
         text-indent: inherit;
     }
     p {
         text-indent: 0.5em;
+    }
+    p:is(:has(img), :has(video)) {
+        text-indent: 0;
     }
     p:is(:has(img), :has(video)) em {
         width: 100%;
@@ -84,8 +90,17 @@ const { frontmatter } = Astro.props;
     video {
         width: 100%;
     }
-    ul {
+    .tags {
         padding: 0;
         margin: 0 0 4px 0;
+    }
+    .tag {
+        margin-right: 1ch;
+    }
+    li {
+        margin-bottom: 0.5em;
+    }
+    main {
+        line-height: 1.4;
     }
 </style>
