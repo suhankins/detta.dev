@@ -108,6 +108,9 @@ const { title, description } = Astro.props;
         --background-2: #372947;
 
         --tag-background-1: #e874b0;
+
+        --project-card-shadow: none;
+        --logo-shadow: none;
     }
     @media (prefers-color-scheme: light) {
         :root {
@@ -125,6 +128,9 @@ const { title, description } = Astro.props;
             --background-2: #faf4ff;
 
             --tag-background-1: #ffa4d3;
+
+            --project-card-shadow: #00000033 2px 2px 10px;
+            --logo-shadow: 2px 2px 10px #00000022;
         }
     }
     html {
