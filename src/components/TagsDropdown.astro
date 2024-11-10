@@ -23,9 +23,6 @@ const { tags } = Astro.props;
         position: relative;
         display: inline-block;
     }
-    div:not(:is(:hover, :has(.opener:is(:active, :focus)))) .accordion {
-        grid-template-rows: 0fr;
-    }
     .opener {
         appearance: none;
     }
@@ -39,14 +36,18 @@ const { tags } = Astro.props;
     div:is(:hover, :has(.opener:is(:active, :focus))) .opener:before {
         rotate: -90deg;
     }
+    div:is(:hover, :has(.opener:is(:active, :focus))) ul {
+        bottom: 0;
+        visibility: visible;
+    }
     .accordion {
         position: absolute;
-        bottom: calc(1em + 3px);
-        grid-template-rows: 1fr;
-        transition: 250ms grid-template-rows ease;
+        padding-bottom: calc(1.0em + 2px);
+        bottom: 0;
         display: grid;
         overflow: hidden;
         margin: auto 0 5px 0;
+        clip-path: polygon(0 0, 100% 0, 100% calc(100% - 0.5em), 0 calc(100% - 0.5em));
     }
     ul {
         padding: 0;
@@ -54,9 +55,14 @@ const { tags } = Astro.props;
         gap: 2px;
         margin: 0 0 4px 0;
         overflow: hidden;
+        bottom: -100%;
+        position: relative;
+        transition: 250ms bottom ease, 250ms visibility ease;
+        visibility: hidden;
+        animation-fill-mode: forwards;
     }
     @media (prefers-reduced-motion) {
-        .accordion {
+        ul {
             transition: none;
         }
     }
