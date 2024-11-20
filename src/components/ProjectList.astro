@@ -1,12 +1,16 @@
 ---
 import ProjectCard from './ProjectCard.astro';
+import AgentImage from './screenshots/agent.png';
+import DucklakeImage from './screenshots/ducklake.png';
+import SpotifyImage from './screenshots/spotify.png';
+import RaidImage from './screenshots/raid.png';
 ---
 
 <div>
     <ProjectCard
         title="Agent Up In The Sky"
         tags={['Game development', 'Godot']}
-        imageName="agent"
+        image={AgentImage}
         links={[
             {
                 type: 'itch',
@@ -27,7 +31,7 @@ import ProjectCard from './ProjectCard.astro';
     <ProjectCard
         title="Ducklake"
         tags={['Game development', 'PWA', 'Three.js', 'TypeScript']}
-        imageName="ducklake"
+        image={DucklakeImage}
         links={[
             { type: 'website', url: 'https://ducklake.detta.dev/' },
             { type: 'github', url: 'https://github.com/suhankins/ducklake' },
@@ -38,7 +42,7 @@ import ProjectCard from './ProjectCard.astro';
     <ProjectCard
         title="Get Spotify Song Name"
         tags={['Web development', 'PWA', 'Astro', 'TypeScript']}
-        imageName="spotify"
+        image={SpotifyImage}
         links={[
             {
                 type: 'website',
@@ -55,7 +59,7 @@ import ProjectCard from './ProjectCard.astro';
     <ProjectCard
         title="RAID: World War II Files"
         tags={['Web development', 'NextJS', 'Steam API', 'TypeScript']}
-        imageName="raid"
+        image={RaidImage}
         links={[
             {
                 type: 'website',

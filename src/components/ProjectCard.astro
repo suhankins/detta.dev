@@ -1,5 +1,5 @@
 ---
-import Image from 'astro/components/Image.astro';
+import { Picture } from 'astro:assets';
 import TagsDropdown from './TagsDropdown.astro';
 import ProjectLink, {
     type Props as ProjectLinkProps,
@@ -8,34 +8,34 @@ import ProjectLink, {
 interface Props {
     title: string;
     tags?: string[];
-    imageName?: string;
+    image?: ImageMetadata;
     links: {
         type: ProjectLinkProps['type'];
         url: string;
     }[];
 }
 
-const { title, tags, imageName, links } = Astro.props;
+const { title, tags, image, links } = Astro.props;
 ---
 
-<article class:list={{ short: !imageName }}>
+<article class:list={{ short: !image }}>
     {
-        imageName && (
+        image && (
             <>
                 <div class="background-container" role="presentation">
-                    <Image
-                        src={`/screenshots/${imageName}.png`}
+                    <Picture
+                        formats={['avif', 'webp', 'jpeg']}
+                        src={image}
                         alt=""
-                        width={350}
-                        height={184}
+                        width={500}
                         class="background"
                     />
                 </div>
-                <Image
-                    src={`/screenshots/${imageName}.png`}
+                <Picture
+                    formats={['avif', 'webp', 'jpeg']}
+                    src={image}
                     alt=""
-                    width={350}
-                    height={184}
+                    width={500}
                     class="image"
                     role="presentation"
                 />
@@ -92,6 +92,7 @@ const { title, tags, imageName, links } = Astro.props;
         box-shadow: var(--project-card-shadow);
     }
     .image {
+        width: 350px;
         height: 100%;
         object-fit: cover;
         box-shadow: var(--project-card-shadow);
@@ -116,9 +117,9 @@ const { title, tags, imageName, links } = Astro.props;
         text-shadow: var(--text-shadow);
     }
     .background {
-        scale: 1.5 1.1;
+        scale: 1.4 1.1;
         filter: blur(50px);
-        mix-blend-mode: hue;
+        opacity: 0.3;
         position: absolute;
         left: 0;
     }
