@@ -12,12 +12,12 @@ I love RAID: World War II. While it's objectively a dead game, I thought it was 
 
 The issue is, after getting every achievement and maxed out every weapon, the only thing I could unlock were outfits, and they were very expensive. Average job that lasted around 15 minutes paid 2 gold bars at best, and limited and rare Outlaw Raids paid ~50. One set of pants is 150 gold bars. That's rough.
 
-![](/blog/daily-raid/414740_20241003173012_1.png)
+![](./daily-raid/414740_20241003173012_1.png)
 _These are good looking pants, but perhaps not 250-gold-bars-looking pants_
 
 And then I thought that another issue the game has is challenge cards - they were supposed to shake up your gameplay every now and then, change how things are, but due to their limited number and lackluster effects, they were rarely if ever used.
 
-![Screenshot showing card "Take the cannoli". Positive effect: No movement penalties for carrying heavy objects. Negative effect: Enemies loot drop chance reduced by 15%. Can only be used in Operations.](/blog/daily-raid/414740_20241003173510_1.png)
+![Screenshot showing card "Take the cannoli". Positive effect: No movement penalties for carrying heavy objects. Negative effect: Enemies loot drop chance reduced by 15%. Can only be used in Operations.](./daily-raid/414740_20241003173510_1.png)
 _Until recently you only got 3 challenge cards a day if you got lucky, and imagine if you got this one. Positive effect sounds very good for Gold Rush and Trainwreck raids, but then you see that it's an Operation card. There's not a single operation where you carry anything for a meaningful amount of time._
 
 ---
@@ -34,10 +34,10 @@ It was fun building UI for it, trying to fit all the things I need neatly into t
 <em>After I finished adding a button for a Daily Raid in the menu, I started working on limiting difficulty, because I thought it'd be lame if you could collect it on Easy. During development I thought it should only be collected on Hard, but shortly after release I added ability to collect it on Very Hard as well.</em>
 </p>
 
-![](/blog/daily-raid/daily_raid_0.png)
+![](./daily-raid/daily_raid_0.png)
 _Working on button design, adding text below instead of difficulty. Shortly after sharing this design, Rex, one of the M.U.G. team members who work on the game right now, suggested renaming it to Daily Bounty and proposed an icon that is still used today._
 
-![](/blog/daily-raid/daily_raid_1.png)
+![](./daily-raid/daily_raid_1.png)
 _Finally added forced challenge card display. Really proud of how it looks, like it was part of the UI all along._
 
 Giving player who has the mod gold is easy - just call a function to give gold. RAID WW2 mods have complete control over the source code, so it's trivial to do anything on the side of a player who has the mod. When it comes to other players, I'm limited by the commands that they can listen to.
@@ -45,7 +45,7 @@ Giving player who has the mod gold is easy - just call a function to give gold. 
 My first idea was messing with Mission Rewards system, but the system itself is very messy and is entirely controlled on player's side, so I can't do anything about it for the un-modded players.
 
 Then I realized something: in the levels you sometimes find small golden items, like watches and vases, and if you pick up enough of them, you get a gold bar. And even better, host controls placement of these small items, so they can just tell everyone "hey, there's a new golden item" and then immediately pick it up to give everyone some gold.
-![](/blog/daily-raid/414740_20241003225513_1.png)
+![](./daily-raid/414740_20241003225513_1.png)
 _They keep leaving coin collections all over the place, but I don't mind._
 
 That method worked flawlessly, and I was able to give everyone connected arbitrary amount of gold just by spawning a single golden item and constantly telling everyone "I picked it up, it was worth 1 gold bar" times however many gold bars I needed to give everyone. I actually couldn't just say "item I picked up was worth many gold bars" because game actually couldn't add multiple gold bars at once.

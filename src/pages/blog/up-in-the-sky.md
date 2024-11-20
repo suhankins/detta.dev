@@ -23,7 +23,7 @@ From the beginning, I decided that I want my game to be 3D and made out of voxel
 
 For the character I quickly settled on generic secret agent: black suit, sunglasses, and bald head, because modeling hard would be hard. Originally he also had a pink tie, which I can't recall the reason for, but that was swapped for a black tie after my friend sent me an [article about Pope's Asia-Pacific trip](https://apnews.com/article/asia-pope-longest-trip-photo-gallery-7509ab7a625fc63d951c05ce5b67a133) and I saw how sharp was Pope's security dressed. Truly that's what a real secret agent should look like!
 
-![](/blog/up-in-the-sky/player.png)
+![](./up-in-the-sky/player.png)
 
 By 3rd of September I had basic movement done, with crouching, walking in every direction, and separate arms and legs animations playing at the same time. All of these mechanics mostly stayed unchanged during development.
 
@@ -41,7 +41,7 @@ After player was done, I started working on enemies for us to fight. I based the
 
 For their weapons I chose AK-47. For such a generic Bad Guy design, it only fits to choose the most generic Bad Guy weapon.
 
-![](/blog/up-in-the-sky/enemy.png)
+![](./up-in-the-sky/enemy.png)
 
 ## Gameplay AI
 
@@ -54,8 +54,8 @@ I chose Godot addon [Beehave](https://bitbra.in/beehave/) for behavior tree impl
 
 Most important thing for my AI was what I called "AI points": points all over the map that tell AI where to go when needed, i.e. where's cover, where can player be flanked.
 
-![](/blog/up-in-the-sky/ai_points.png)
-_On this screenshot you can see a few of these "AI points". ![](/blog/up-in-the-sky/patrol.png) is a patrol point - when enemies are not alerted, they will go between these. ![](/blog/up-in-the-sky/duck_cover.png) is cover enemy can crouch behind, with ![](/blog/up-in-the-sky/arrow.png) showing from which direction it protects (so if arrow points at player, this cover point will protect enemy from them)._
+![](./up-in-the-sky/ai_points.png)
+_On this screenshot you can see a few of these "AI points". ![](./up-in-the-sky/patrol.png) is a patrol point - when enemies are not alerted, they will go between these. ![](./up-in-the-sky/duck_cover.png) is cover enemy can crouch behind, with ![](./up-in-the-sky/arrow.png) showing from which direction it protects (so if arrow points at player, this cover point will protect enemy from them)._
 
 <br />
 
@@ -91,7 +91,7 @@ On 15th of September I finally started working on first proper level. From the v
 
 ### Economy class
 
-![](/blog/up-in-the-sky/level_1_0.png)
+![](./up-in-the-sky/level_1_0.png)
 _First I started working on economy class. I very quickly realized that, unfortunaltely, real planes don't make for very interesting arenas, as it's just rows of seats._
 
 <p>
@@ -102,20 +102,20 @@ _First I started working on economy class. I very quickly realized that, unfortu
 <em>Very early on I told my friend that my plane didn't really feel like a plane, and they suggested adding curtains. Not sure if it added to the plane feel, but it definitely made for a fun addition.</em>
 </p>
 
-![](/blog/up-in-the-sky/level_1_2.png)
+![](./up-in-the-sky/level_1_2.png)
 _Screenshot from the final build, showing new lighting, clouds outside the plane, and enemy who got ran over with food cart._
 
 ### Premium class
 
-![](/blog/up-in-the-sky/level_2_0.png)
+![](./up-in-the-sky/level_2_0.png)
 _For next floor, I decided it would make sense if you went the other way, so in previous level you were going up the screen, and on this one you are going down. This introduced some design challenges, for example, I had to make all walls thinner because otherwise it'd be easy to lose player._
 
-![](/blog/up-in-the-sky/level_2_1.png)
+![](./up-in-the-sky/level_2_1.png)
 _Final area was set in a restaurant. I really wanted to add breakable bottles, so during gunfight there would be glass bottles breaking all over the place, but I had a lot of technical difficulties implementing them. With end of the game jam being near, I decided to abandon breakable bottles idea._
 
 ### Tutorial
 
-![](/blog/up-in-the-sky/level_0_0.png)
+![](./up-in-the-sky/level_0_0.png)
 _For tutorial in luggage area, I wanted to go for dark rooms with dim lighting. I especially liked how much final area stood out, with its bright yellow light highlighting a table with some subtle enviromental storytelling._
 
 # Release
