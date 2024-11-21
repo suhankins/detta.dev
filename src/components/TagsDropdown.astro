@@ -12,6 +12,11 @@ const { tags } = Astro.props;
             {tags.toSpliced(0, 1).map((tag) => <li class="tag">{tag}</li>)}
         </ul>
     </div>
+    <div class="fake-accordion">
+        <ul>
+            {tags.toSpliced(0, 1).map((tag) => <li class="tag">{tag}</li>)}
+        </ul>
+    </div>
     <button class="tag opener" aria-label="Open tags" class="opener"
         >{tags[0]}</button
     >
@@ -25,6 +30,8 @@ const { tags } = Astro.props;
     }
     .opener {
         appearance: none;
+        width: 100%;
+        text-align: left;
     }
     .opener:before {
         content: '▶';
@@ -33,10 +40,10 @@ const { tags } = Astro.props;
         transition: rotate 0.25s;
         transform-origin: top left;
     }
-    div:is(:hover, :has(.opener:is(:active, :focus))) .opener:before {
+    .dropdown-container:is(:hover, :has(.opener:is(:active, :focus))) .opener:before {
         rotate: -90deg;
     }
-    div:is(:hover, :has(.opener:is(:active, :focus))) ul {
+    .dropdown-container:is(:hover, :has(.opener:is(:active, :focus))) .accordion ul {
         bottom: 0;
         visibility: visible;
     }
@@ -54,6 +61,10 @@ const { tags } = Astro.props;
             0 calc(100% - 0.5em)
         );
     }
+    .fake-accordion {
+        height: 0;
+        visibility: hidden;
+    }
     ul {
         padding: 0;
         display: grid;
@@ -67,6 +78,7 @@ const { tags } = Astro.props;
             250ms visibility ease;
         visibility: hidden;
         animation-fill-mode: forwards;
+        width: max-content;
     }
     @media (prefers-reduced-motion) {
         ul {
