@@ -21,7 +21,7 @@ const { frontmatter } = Astro.props;
             frontmatter.released ? (
                 <>
                     <header>
-                        <h1>{frontmatter.title}</h1>
+                        <h1 class="blog-title">{frontmatter.title}</h1>
                         <p class="publish-date">
                             Published:{' '}
                             <time datetime={frontmatter.pubDate}>
@@ -59,6 +59,11 @@ const { frontmatter } = Astro.props;
         font-size: 1.2em;
     }
     .blog-container {
+        .blog-title {
+            text-align: center;
+            margin-top: 1em;
+            margin-bottom: 1em;
+        }
         label {
             margin-left: auto;
         }
@@ -97,7 +102,8 @@ const { frontmatter } = Astro.props;
         }
         .tags {
             padding: 0;
-            margin: 0 0 4px 0;
+            margin-top: 2em;
+            margin-bottom: 1em;
         }
         .tag {
             margin-right: 1ch;
@@ -107,6 +113,11 @@ const { frontmatter } = Astro.props;
         }
         main {
             line-height: 1.4;
+        }
+        hr {
+            border-bottom-color: var(--footnote-color);
+            margin-top: 2em;
+            margin-bottom: 2em;
         }
     }
 </style>
