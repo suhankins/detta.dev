@@ -9,6 +9,10 @@ tags:
 released: true
 ---
 
+# Contents
+
+# Introduction
+
 In August I saw an announcement for Fedijam 2024 - a gamejam event for users of the fediverse. Goal was to create a game within a month, and the theme was "Up in the clouds".
 
 I quickly got an idea that I want it to be a top down shooter where you stop terrorists on a plane - heavily inspired by one mission from Call of Duty: Modern Warfare 3 and [Fights In Tight Spaces](https://store.steampowered.com/app/1265820/Fights_in_Tight_Spaces/).
@@ -27,13 +31,8 @@ For the character I quickly settled on generic secret agent: black suit, sunglas
 
 By 3rd of September I had basic movement done, with crouching, walking in every direction, and separate arms and legs animations playing at the same time. All of these mechanics mostly stayed unchanged during development.
 
-<p>
-<video controls width="720" muted>
-  <source src="/blog/up-in-the-sky/upintheskies_0.webm" type="video/webm" />
-  <source src="/blog/up-in-the-sky/upintheskies_0.mp4" type="video/mp4" />
-</video>
-<em>Note: as you can see in this clip, gun has spread, but at some point in development I decided that having spread didn't add anything to the game and only made me question if I missed my shot because there's some issue with hitboxes, or because I got unlucky</em>
-</p>
+![](/blog/up-in-the-sky/upintheskies_0.webm)
+_Note: as you can see in this clip, gun has spread, but at some point in development I decided that having spread didn't add anything to the game and only made me question if I missed my shot because there's some issue with hitboxes, or because I got unlucky._
 
 ## Enemies
 
@@ -61,13 +60,8 @@ _On this screenshot you can see a few of these "AI points". ![](./up-in-the-sky/
 
 Groundwork for AI was laid from 5th to 11th of September, but work on AI continued all the way until release.
 
-<p>
-<video controls width="720" muted>
-  <source src="/blog/up-in-the-sky/upintheskies_1.webm" type="video/webm" />
-  <source src="/blog/up-in-the-sky/upintheskies_1.mp4" type="video/mp4" />
-</video>
-<em>Clip from 11th of September. AI can now patrol the area, get alerted when they see the player, hide behind cover to reload, and flank player when they're not in sight.</em>
-</p>
+![](/blog/up-in-the-sky/upintheskies_1.webm)
+_Clip from 11th of September. AI can now patrol the area, get alerted when they see the player, hide behind cover to reload, and flank player when they're not in sight._
 
 One of the AI features that a lot of players really liked was enemies pushing food carts to use as cover - that is done with AI points as well! When enemy is alerted, they will check if there's a "pull cart" point next to them, and if there is, pull a cart towards it. Unfortunately, this feature was a late addition to a project, so I don't have in-development footage of it.
 
@@ -77,13 +71,8 @@ HUD, or Heads Up Display, or health and ammo displays were inspired by Max Payne
 
 For sound design it really helped that Godot's animation system allows for a lot of different things to be present on the timeline, including sounds. I collected a bunch of free audio files from freesound.org and added them to animations, to make shooting and reloading sound relatively nice.
 
-<p>
-<video controls width="720">
-  <source src="/blog/up-in-the-sky/upintheskies_2.webm" type="video/webm" />
-  <source src="/blog/up-in-the-sky/upintheskies_2.mp4" type="video/mp4" />
-</video>
-<em>Clip from 13th of September, showing complete HUD and sound design in action.</em>
-</p>
+![](/blog/up-in-the-sky/upintheskies_2.webm)
+_Clip from 13th of September, showing complete HUD and sound design in action._
 
 ## Level design
 
@@ -94,13 +83,8 @@ On 15th of September I finally started working on first proper level. From the v
 ![](./up-in-the-sky/_level_1_0.png)
 _First I started working on economy class. I very quickly realized that, unfortunaltely, real planes don't make for very interesting arenas, as it's just rows of seats._
 
-<p>
-<video controls width="720" muted>
-  <source src="/blog/up-in-the-sky/physics_curtains.webm" type="video/webm" />
-  <source src="/blog/up-in-the-sky/physics_curtains.mp4" type="video/mp4" />
-</video>
-<em>Very early on I told my friend that my plane didn't really feel like a plane, and they suggested adding curtains. Not sure if it added to the plane feel, but it definitely made for a fun addition.</em>
-</p>
+![](/blog/up-in-the-sky/physics_curtains.webm)
+_Very early on I told my friend that my plane didn't really feel like a plane, and they suggested adding curtains. Not sure if it added to the plane feel, but it definitely made for a fun addition._
 
 ![](./up-in-the-sky/_level_1_2.png)
 _Screenshot from the final build, showing new lighting, clouds outside the plane, and enemy who got ran over with food cart._

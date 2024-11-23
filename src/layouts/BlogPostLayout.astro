@@ -59,13 +59,24 @@ const { frontmatter } = Astro.props;
         font-size: 1.2em;
     }
     .blog-container {
+        label {
+            margin-left: auto;
+        }
         .blog-title {
             text-align: center;
             margin-top: 1em;
             margin-bottom: 1em;
         }
-        label {
-            margin-left: auto;
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            a {
+                color: inherit;
+                margin-right: 0.5ch;
+            }
         }
         .controls {
             display: flex;
@@ -87,10 +98,11 @@ const { frontmatter } = Astro.props;
         p {
             text-indent: 0.5em;
         }
-        p:is(:has(img), :has(video)) {
-            text-indent: 0;
+        figure {
+            margin: 2em 0 2em 0;
         }
-        p:is(:has(img), :has(video)) em {
+        figcaption {
+            font-style: italic;
             width: 100%;
             display: block;
             text-align: center;

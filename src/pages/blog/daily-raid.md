@@ -26,13 +26,8 @@ To slightly alleviate these problems, I thought of a simple concept: Daily Raid.
 
 It was fun building UI for it, trying to fit all the things I need neatly into the existing job selection menu, but then I had a complicated problem. You see, one of my design goals was for Daily Raid to award to everyone who plays with you, no matter if they have the mod or not. I wanted this because RAID has a tiny player base, and I don't want anyone to miss out on a little fun my mod brings to the game. But this meant that I had to come up with some way to give other players gold.
 
-<p>
-<video controls width="720" muted>
-  <source src="/blog/daily-raid/2022-07-14_03-58-29.webm" type="video/webm" />
-  <source src="/blog/daily-raid/2022-07-14_03-58-29.mp4" type="video/mp4" />
-</video>
-<em>After I finished adding a button for a Daily Raid in the menu, I started working on limiting difficulty, because I thought it'd be lame if you could collect it on Easy. During development I thought it should only be collected on Hard, but shortly after release I added ability to collect it on Very Hard as well.</em>
-</p>
+![](/blog/daily-raid/2022-07-14_03-58-29.webm)
+_After I finished adding a button for a Daily Raid in the menu, I started working on limiting difficulty, because I thought it'd be lame if you could collect it on Easy. During development I thought it should only be collected on Hard, but shortly after release I added ability to collect it on Very Hard as well._
 
 ![](./daily-raid/_daily_raid_0.png)
 _Working on button design, adding text below instead of difficulty. Shortly after sharing this design, Rex, one of the M.U.G. team members who work on the game right now, suggested renaming it to Daily Bounty and proposed an icon that is still used today._
