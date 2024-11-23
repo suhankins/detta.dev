@@ -54,7 +54,7 @@ I chose Godot addon [Beehave](https://bitbra.in/beehave/) for behavior tree impl
 Most important thing for my AI was what I called "AI points": points all over the map that tell AI where to go when needed, i.e. where's cover, where can player be flanked.
 
 ![](./up-in-the-sky/_ai_points.png)
-_On this screenshot you can see a few of these "AI points". ![](./up-in-the-sky/_patrol.png) is a patrol point - when enemies are not alerted, they will go between these. ![](./up-in-the-sky/_duck_cover.png) is cover enemy can crouch behind, with ![](./up-in-the-sky/_arrow.png) showing from which direction it protects (so if arrow points at player, this cover point will protect enemy from them)._
+_On this screenshot you can see a few of these "AI points". ![Icon of a person holding an assault rifle with blue circle next to them](./up-in-the-sky/_patrol.png) is a patrol point - when enemies are not alerted, they will go between these. ![Icon of a person standing behind a short brick wall](./up-in-the-sky/_duck_cover.png) is cover enemy can crouch behind, with ![Arrow icon](./up-in-the-sky/_arrow.png) showing from which direction it protects (so if arrow points at player, this cover point will protect enemy from them)._
 
 <br />
 
