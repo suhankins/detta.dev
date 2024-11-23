@@ -78,6 +78,20 @@ const { frontmatter } = Astro.props;
                 margin-right: 0.5ch;
             }
         }
+        h1[id="contents"] + ol {
+            background-color: var(--background-2);
+            width: max-content;
+            padding: 20px 40px 20px 40px;
+            border-radius: 20px;
+
+            & ol {
+                padding-top: 0.5em;
+                padding-left: 2ch;
+                li::marker {
+                    content: "";
+                }
+            }
+        }
         .controls {
             display: flex;
         }

@@ -9,7 +9,9 @@ import replaceWebmImgWithVideo from './src/rehype/replace-webm-img-with-video';
 export default defineConfig({
     site: 'https://detta.dev',
     markdown: {
-        remarkPlugins: [[remarkToc, { heading: 'Contents', maxDepth: 3 }]],
+        remarkPlugins: [
+            [remarkToc, { heading: 'Contents', maxDepth: 3, ordered: true }],
+        ],
         rehypePlugins: [
             rehypeSlug,
             [
@@ -25,7 +27,7 @@ export default defineConfig({
                 },
             ],
             replaceWebmImgWithVideo,
-            paragraphToFigure
+            paragraphToFigure,
         ],
     },
 });
