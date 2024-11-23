@@ -98,9 +98,6 @@ const { frontmatter } = Astro.props;
         h1 {
             margin-top: 0.5em;
         }
-        p:has(img) {
-            text-align: center;
-        }
         img {
             max-width: 100%;
             height: auto;
@@ -114,6 +111,7 @@ const { frontmatter } = Astro.props;
         }
         figure {
             margin: 2em 0 2em 0;
+            text-align: center;
         }
         figcaption {
             font-style: italic;
