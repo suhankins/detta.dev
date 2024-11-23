@@ -30,7 +30,7 @@ It was fun building UI for it, trying to fit all the things I need neatly into t
 _After I finished adding a button for a Daily Raid in the menu, I started working on limiting difficulty, because I thought it'd be lame if you could collect it on Easy. During development I thought it should only be collected on Hard, but shortly after release I added ability to collect it on Very Hard as well._
 
 ![](./daily-raid/_daily_raid_0.png)
-_Working on button design, adding text below instead of difficulty. Shortly after sharing this design, Rex, one of the M.U.G. team members who work on the game right now, suggested renaming it to Daily Bounty and proposed an icon that is still used today._
+_Working on button design, adding text below instead of difficulty. Shortly after sharing this design, Rex, one of the M.U.G. team members who work on the game right now, suggested renaming it to Daily Bounty and proposed an icon ![](./daily-raid/_bounty.png) that is still used today._
 
 ![](./daily-raid/_daily_raid_1.png)
 _Finally added forced challenge card display. Really proud of how it looks, like it was part of the UI all along._
