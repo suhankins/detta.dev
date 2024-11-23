@@ -51,7 +51,7 @@ I really wanted to choose Goal Oriented Action Planning (GOAP), system used in F
 After looking around some more, I found Behavior Trees, and that system was way more straight forward: even from high-level overview I could already imagine what would it look like in code.
 I chose Godot addon [Beehave](https://bitbra.in/beehave/) for behavior tree implementation, as it seemed pretty simple to use and extend.
 
-Most important thing for my AI was what I called "AI points": points all over the map that tell AI where to go when needed, i.e. where's cover, where can player be flanked.
+Most important thing for my AI was what I called "AI points": points all over the map that tell AI where to go when needed, i.e. where's cover, where can player be flanked. I took this approach from Half-life 2 that used a similar system, though as far as I remember, their system required far fewer hand-placed markers than mine did.
 
 ![](./up-in-the-sky/_ai_points.png)
 _On this screenshot you can see a few of these "AI points". ![Icon of a person holding an assault rifle with blue circle next to them](./up-in-the-sky/_patrol.png) is a patrol point - when enemies are not alerted, they will go between these. ![Icon of a person standing behind a short brick wall](./up-in-the-sky/_duck_cover.png) is cover enemy can crouch behind, with ![Arrow icon](./up-in-the-sky/_arrow.png) showing from which direction it protects (so if arrow points at player, this cover point will protect enemy from them)._
