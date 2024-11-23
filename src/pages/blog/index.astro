@@ -4,7 +4,11 @@ import Layout from '../../layouts/Layout.astro';
 
 const posts = Object.values(import.meta.glob('./*.md', { eager: true }))
     .filter((post: any) => !!post.frontmatter.released)
-    .sort((a: any, b: any) => a.frontmatter.pubDate - b.frontmatter.pubDate);
+    .sort(
+        (a: any, b: any) =>
+            new Date(b.frontmatter.pubDate).getTime() -
+            new Date(a.frontmatter.pubDate).getTime()
+    );
 ---
 
 <Layout title="Blog Posts | detta.dev">
