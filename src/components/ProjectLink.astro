@@ -6,6 +6,7 @@ import WebsitePath, {
     viewbox as websiteViewbox,
 } from './icons/WebsitePath.astro';
 import ItchPath, { viewbox as itchViewbox } from './icons/ItchPath.astro';
+import SteamPath, { viewbox as steamViewbox } from './icons/SteamPath.astro';
 
 const TYPES = {
     github: {
@@ -29,6 +30,10 @@ const TYPES = {
         path: ItchPath,
         viewbox: itchViewbox,
     },
+    steam: {
+        path: SteamPath,
+        viewbox: steamViewbox
+    }
 };
 
 export interface Props {
