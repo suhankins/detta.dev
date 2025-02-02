@@ -40,12 +40,19 @@ const { tags } = Astro.props;
         transition: rotate 0.25s;
         transform-origin: top left;
     }
-    .dropdown-container:is(:hover, :has(.opener:is(:active, :focus))) .opener:before {
-        rotate: -90deg;
-    }
-    .dropdown-container:is(:hover, :has(.opener:is(:active, :focus))) .accordion ul {
-        bottom: 0;
-        visibility: visible;
+    .dropdown-container:is(:hover, :has(.opener:is(:active, :focus))) {
+        .opener:before {
+            rotate: -90deg;
+        }
+
+        .accordion ul {
+            bottom: 0;
+            visibility: visible;
+        }
+
+        .accordion {
+            visibility: visible;
+        }
     }
     .accordion {
         position: absolute;
@@ -53,6 +60,7 @@ const { tags } = Astro.props;
         bottom: 0;
         display: grid;
         overflow: hidden;
+        visibility: hidden;
         margin: auto 0 5px 0;
         clip-path: polygon(
             0 0,
