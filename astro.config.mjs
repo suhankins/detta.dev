@@ -9,30 +9,33 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://detta.dev',
+    site: 'https://detta.dev',
 
-  markdown: {
-      remarkPlugins: [
-          [remarkToc, { heading: 'Contents', maxDepth: 3, ordered: true }],
-      ],
-      rehypePlugins: [
-          rehypeSlug,
-          [
-              rehypeAutolinkHeadings,
-              {
-                  behavior: 'prepend',
-                  content: {
-                      type: 'element',
-                      tagName: 'span',
-                      properties: {},
-                      children: [{ type: 'text', value: '#' }],
-                  },
-              },
-          ],
-          replaceWebmImgWithVideo,
-          paragraphToFigure,
-      ],
-  },
+    markdown: {
+        shikiConfig: {
+            theme: 'tokyo-night'
+        },
+        remarkPlugins: [
+            [remarkToc, { heading: 'Contents', maxDepth: 3, ordered: true }],
+        ],
+        rehypePlugins: [
+            rehypeSlug,
+            [
+                rehypeAutolinkHeadings,
+                {
+                    behavior: 'prepend',
+                    content: {
+                        type: 'element',
+                        tagName: 'span',
+                        properties: {},
+                        children: [{ type: 'text', value: '#' }],
+                    },
+                },
+            ],
+            replaceWebmImgWithVideo,
+            paragraphToFigure,
+        ],
+    },
 
-  integrations: [sitemap()],
+    integrations: [sitemap()],
 });

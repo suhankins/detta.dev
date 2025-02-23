@@ -140,5 +140,25 @@ const { frontmatter } = Astro.props;
             margin-top: 2em;
             margin-bottom: 2em;
         }
+        pre:has(code) {
+            padding-top: 1em;
+            padding-bottom: 1em;
+            border-radius: 5px;
+        }
+        pre > code {
+            background-color: inherit;
+        }
+        table {
+            border-collapse: collapse;
+            padding: 0.2em;
+            border-radius: 5px;
+            background-color: var(--background-2);
+        }
+        td, th {
+            padding: 0.4em;
+        }
+        abbr {
+            cursor: help;
+        }
     }
 </style>
