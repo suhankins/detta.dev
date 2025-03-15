@@ -4,6 +4,7 @@ import AgentImage from './screenshots/agent.png';
 import DucklakeImage from './screenshots/ducklake.png';
 import SpotifyImage from './screenshots/spotify.png';
 import RaidImage from './screenshots/raid.png';
+import HitmanImage from './screenshots/hitman.jpg';
 ---
 
 <div>
@@ -78,6 +79,24 @@ import RaidImage from './screenshots/raid.png';
         >, made with NextJS.</ProjectCard
     >
     <ProjectCard
+        title="Hitman Edition Creator"
+        tags={['Web development', 'Astro', 'TypeScript']}
+        image={HitmanImage}
+        links={[
+            {
+                type: 'website',
+                url: 'https://hitman.detta.dev/',
+            },
+            {
+                type: 'github',
+                url: 'https://github.com/suhankins/hitman-edition-creator',
+            },
+        ]}
+    >
+        Website where you can create your own Comparison Grids for HITMAN: World
+        of Assassination, with your own editions and features.</ProjectCard
+    >
+    <ProjectCard
         title="keycap_config decoder"
         tags={['Hacking', 'Deno', 'TypeScript']}
         links={[
@@ -131,7 +150,7 @@ import RaidImage from './screenshots/raid.png';
         ]}
     >
         Mod for PAYDAY 2 that allows for easy importing and exporting of Builder
-        formated builds.
+        formatted builds.
     </ProjectCard>
     <ProjectCard
         title="Argos III Display"
@@ -175,7 +194,10 @@ import RaidImage from './screenshots/raid.png';
         tags={['Web development', 'Astro']}
         links={[
             { type: 'website', url: 'https://railwayrockaycity.com/' },
-            { type: 'github', url: 'https://github.com/suhankins/railwaysrockaycity' },
+            {
+                type: 'github',
+                url: 'https://github.com/suhankins/railwaysrockaycity',
+            },
         ]}
         >Website for Rockay City Subways from
         <a
