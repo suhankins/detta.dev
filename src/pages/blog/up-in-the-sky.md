@@ -114,6 +114,7 @@ My final thoughts about this project:
 -   Tutorial completely failed at teaching players how to play the game. For example, crouching is taught by making player crouch under something to pass it - something that player actually never does in the game. Instead it should've put player in position where ducking behind something would help them avoid danger.
 -   Targeting browsers for the project was a double-edged sword: on one side, it allowed more people to easily try it; on the other, "Compatibility" renderer Godot uses for browsers was really annoying to work with, as it simply doesn't support a lot of new nice features.
 -   Godot overall is very nice to work with, even though sometimes it can be buggy.
+-   Behavior trees weren't the best choice, state machine would've worked better.
 
-In the end, I think I made a pretty decent little game. If you want to try it, you can [get it on itch.io](https://punishedbernadetta.itch.io/agent-up-in-the-sky).
+In the end, I think I made a pretty decent little game. If you want to try it, you can [play it for free on itch.io](https://punishedbernadetta.itch.io/agent-up-in-the-sky).
 There's a new Fedijam scheduled for December and I will definitely participate, and, hopefully, my new game will be even better.
