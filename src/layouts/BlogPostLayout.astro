@@ -157,8 +157,28 @@ const { frontmatter } = Astro.props;
         td, th {
             padding: 0.4em;
         }
-        abbr {
+        [data-tooltip] {
             cursor: help;
+            text-decoration-line: underline;
+            text-decoration-style: dotted;
+            position: relative;
+        }
+        [data-tooltip]::before {
+            transition: opacity 0.25s;
+            opacity: 0;
+            content: attr(data-tooltip);
+            text-decoration: none;
+            position: absolute;
+            text-align: center;
+            background-color: var(--tag-background-1);
+            border-radius: 99999999px;
+            padding: 2px 0.5em;
+            white-space: nowrap;
+            transform: translate(-50%);
+            inset: auto auto calc(100% + 0.5em)50%;
+        }
+        [data-tooltip]:hover::before {
+            opacity: 1;
         }
     }
 </style>

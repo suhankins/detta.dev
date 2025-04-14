@@ -16,7 +16,7 @@ You ever go to [Wikipedia page on Combining Diacritical Marks](https://en.wikipe
 
 | | Instead of this | It should be this |
 |---|---|---|
-| Hex | <dfn><abbr title="A">41</abbr></dfn> <dfn><abbr title="◌">E2 97 8C</abbr></dfn> <dfn><abbr title="Combining character  ̂">CC 82</abbr></dfn> | <dfn><abbr title="A">41</abbr></dfn> <dfn><abbr title="Combining character  ̂">CC 82</abbr></dfn> |
+| Hex | <span data-tooltip="A">41</span> <span data-tooltip="◌">E2 97 8C</span> <span data-tooltip="Combining character  ̂">CC 82</span> | <span data-tooltip="A">41</span> <span data-tooltip="Combining character  ̂">CC 82</span> |
 | Text | A◌̂ | Â |
 
 You can remove those 3 bytes using something like [HxD](https://mh-nexus.de/en/downloads.php?product=HxD20).
