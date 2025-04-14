@@ -81,7 +81,7 @@ On 15th of September I finally started working on first proper level. From the v
 ### Economy class
 
 ![](./up-in-the-sky/_level_1_0.png)
-_First I started working on economy class. I very quickly realized that, unfortunaltely, real planes don't make for very interesting arenas, as it's just rows of seats._
+_First I started working on economy class. I very quickly realized that, unfortunately, real planes don't make for very interesting arenas, as it's just rows of seats._
 
 ![](/blog/up-in-the-sky/physics_curtains.webm)
 _Very early on I told my friend that my plane didn't really feel like a plane, and they suggested adding curtains. Not sure if it added to the plane feel, but it definitely made for a fun addition._
@@ -100,7 +100,7 @@ _Final area was set in a restaurant. I really wanted to add breakable bottles, s
 ### Tutorial
 
 ![](./up-in-the-sky/_level_0_0.png)
-_For tutorial in luggage area, I wanted to go for dark rooms with dim lighting. I especially liked how much final area stood out, with its bright yellow light highlighting a table with some subtle enviromental storytelling._
+_For tutorial in luggage area, I wanted to go for dark rooms with dim lighting. I especially liked how much final area stood out, with its bright yellow light highlighting a table with some subtle environmental storytelling._
 
 # Release
 
