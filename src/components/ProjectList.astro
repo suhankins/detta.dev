@@ -1,6 +1,7 @@
 ---
 import ProjectCard from './ProjectCard.astro';
 import AgentImage from './screenshots/agent.png';
+import GetThatCdImage from './screenshots/getthatcd.png';
 import DucklakeImage from './screenshots/ducklake.png';
 import SpotifyImage from './screenshots/spotify.png';
 import RaidImage from './screenshots/raid.png';
@@ -8,6 +9,28 @@ import HitmanImage from './screenshots/hitman.jpg';
 ---
 
 <div>
+    <ProjectCard
+        title="GET THAT CD BACK"
+        tags={['Game development', 'Godot']}
+        image={GetThatCdImage}
+        links={[
+            {
+                type: 'itch',
+                url: 'https://punishedbernadetta.itch.io/get-that-cd-back',
+            },
+            {
+                type: 'blog',
+                url: '/blog/get-that-cd-back',
+            },
+            {
+                type: 'github',
+                url: 'https://github.com/suhankins/get-that-cd-back',
+            },
+        ]}
+        >In the year 20XX corporations think they own everything, and now they
+        came for your old CDs. It's time for fists-on approach to media
+        preservation.</ProjectCard
+    >
     <ProjectCard
         title="Agent Up In The Sky"
         tags={['Game development', 'Godot']}
