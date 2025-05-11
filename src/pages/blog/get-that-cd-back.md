@@ -97,8 +97,6 @@ timeline
 
 After fighting your way through an apartment building, next level is set at the Corporation HQ. Initially it was meant to be a series of fights through office cubicles, but then I remembered The Matrix lobby fight - and knew I had to include it.
 
-![Screenshot showing lobby early in development. Long, tall hallway, ending with a huge Corporation logo. Closer to camera you can see a car and glass shards, implying that you entered the building by smashing through the front window.](get-that-cd-back/_lobby_early_screenshot.png)
-
 ![Clip showing that same lobby. Player looks behind, revealing glass smashed by a blue car, with a rainy street outside. Player goes forward towards the end of the lobby, presses a button, and it goes dark. Then, one by one lights turn back on.](/blog/get-that-cd-back/_day_5_scripted_light.mp4)
 *Clip from day 5. After building the lobby, I thought it would look absolutely epic if lights dramatically turned off and on. It did look awesome!*
 
