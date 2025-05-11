@@ -40,7 +40,7 @@ I was looking for a good model for enemy lawyers, and luckily for me, DiscMaster
 I threw together some animations for them. Godot's animation tools, while slightly improved in version 4.4, are still really annoying.
 
 ![Clip showing player fighting 3 enemies who walk through each other in a very basic arena](/blog/get-that-cd-back/_day_1.webm)
-*Clip from the end of Day 1.*
+*Clip from the end of Day 1. Initially enemies could walk through each other, but I thought that looked janky. I had a lot of ideas for complex systems to make enemies go to the sides of each other to surround the player, but making them solid and giving them capsule collision shape worked just as well.*
 
 ## Building levels
 
