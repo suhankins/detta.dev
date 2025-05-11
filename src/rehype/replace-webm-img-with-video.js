@@ -1,7 +1,7 @@
 import { visit } from 'unist-util-visit';
 
 /**
- * Replaces `<img>` tags with `.webm` videos embeded with actual `<video>` tags
+ * Replaces `<img>` tags with `.webm` videos embedded with actual `<video>` tags
  */
 export default function replaceWebmImgWithVideo() {
     /**
@@ -33,6 +33,8 @@ export default function replaceWebmImgWithVideo() {
                 properties: {
                     width: '720',
                     controls: true,
+                    'aria-label': node.properties.alt,
+                    title: node.properties.alt,
                 },
                 children: [
                     {
