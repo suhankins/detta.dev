@@ -117,7 +117,7 @@ CEO's office was very rushed. Originally, I had ideas to add a lot of details, l
 ![Screenshot showing CEO's office, with a massive window showing skyscrapers and yellow skies, a huge desk with big sign saying "CEO", and a few sofas and TVs.](get-that-cd-back/_2025-05-11_015330.jpg)
 
 ![Screenshot showing player standing in front of a door with a sign "License key required". Door has a huge crack and a "fragile" sticker.](get-that-cd-back/_2025-05-11_015311.jpg)
-*I really wanted final door to say "License Key Required", but I was anxious players would actually think they need to find a license key somewhere. My friend suggested adding a huge crack on the door, since players are likely to recognize cracked things as breakable. Even after these changes, I thought players still might not notice it, so I had a silly idea to add a "Fragile" sticker as well.*
+*I really wanted final door to say "License Key Required", but I was anxious players would think they actually need to find a license key somewhere. My friend suggested adding a huge crack on the door, since players are likely to recognize cracked things as breakable. Even after these changes, I thought players still might not notice it, so I had a silly idea to add a "Fragile" sticker as well.*
 
 ## Total Awesomesauce
 
