@@ -143,7 +143,7 @@ After release I asked my Austrian friend to check my game out and he burst out l
 # Conclusions
 
 1. Cyclops Level Builder, while really nice to have, is very clunky. For my next project I should probably learn how to use [func_godot](https://github.com/func-godot) instead, as it allows you to use more mature map editors like [TrenchBroom](https://trenchbroom.github.io/).
-2. Feedback for where punches actually hit is really bad, and a lot of players really figure it out. I should've addressed it earlier and just made whole area in front of the player a hitbox.
+2. Feedback for where punches actually hit is really bad, and a lot of players struggled with figuring it out. I should've addressed it earlier and just made whole area in front of the player a hitbox.
 3. I think the overall art direction was stellar. With limited time and assets I had, going for GoldSrc mod style was the right move.
 4. There definitely should at least be an option to punch final boss. While I think the idea to have "final boss" who taunts you the whole game and then hides like a coward was pretty funny, people still wished they could beat him up.
 
