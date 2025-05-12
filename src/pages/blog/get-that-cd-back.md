@@ -2,7 +2,7 @@
 layout: ../../layouts/BlogPostLayout.astro
 title: 'Retrospective on GET THAT CD BACK'
 pubDate: 2025-05-11
-description: 'Retrospective on my first person brawler created in one week for DiscMaster Jam.'
+description: 'Retrospective on my first person brawler created in 9 days for DiscMaster Jam.'
 tags:
     - Game Development
     - Godot
@@ -15,7 +15,7 @@ released: true
 
 On April 21st, Internet Archive and CanDev organized a game jam centered around their [DiscMaster](https://discmaster.textfiles.com/): archive and search engine for a ton of old CDs full of pictures, sounds, music, and other goodies, a lot of which are not preserved online.
 
-The goal was to make a game using only (or mostly) DiscMaster assets in a week. Looked really fun to me, so I joined.
+The goal was to make a game using only (or mostly) DiscMaster assets in 9 days. Looked really fun to me, so I joined.
 
 I quickly got this idea of a game where you want to share an old game with a friend, and as you are doing so, corporate lawyers are breaking in and stealing your CD, and you have to chase them and beat them all up in the process.
 
