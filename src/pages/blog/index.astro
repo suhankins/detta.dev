@@ -23,8 +23,7 @@ const posts = Object.values(import.meta.glob('./*.md', { eager: true }))
                             {new Date(
                                 post.frontmatter.pubDate
                             ).toLocaleDateString('uk')}
-                        </time>{' '}
-                        -{' '}
+                        </time>
                         <a href={post.url} class="blog-title">
                             {post.frontmatter.title}
                         </a>
@@ -45,6 +44,31 @@ const posts = Object.values(import.meta.glob('./*.md', { eager: true }))
     }
     ul {
         margin-left: 1em;
+    }
+    time::after {
+        content: '-';
+    }
+    @media screen and (max-width: 680px) {
+        ul {
+            margin-left: 0;
+            padding-left: 0;
+            list-style: none;
+        }
+        li {
+            padding-bottom: 1em;
+            padding-top: 1em;
+        }
+        li:not(:last-of-type) {
+            border-bottom: var(--footnote-color);
+            border-bottom-style: solid;
+            border-bottom-width: 1px;
+        }
+        time::after {
+            content: '';
+        }
+        time {
+            display: block;
+        }
     }
     p {
         margin-bottom: 0.5em;
