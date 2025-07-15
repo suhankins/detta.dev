@@ -8,6 +8,14 @@ tags:
 released: true
 ---
 
+# Update from June 26th 2025
+
+On June 26th 2025, MUG team released Bounty Blitz, adding official Daily Bounties to the game. Unlike my implementation, effects each day are completely random.
+
+Now the mod is obsolete since game has this feature already! Good to know that developers actually started making Daily Bounties by straight up copying my implementation, though they did have to change it a lot after they decided on using completely random effects rather than existing cards.
+
+# Original post from October 8th 2024
+
 I love RAID: World War II. While it's objectively a dead game, I thought it was pretty fun, and it was even more fun digging into story of its creation and into the source code to see all the [neat things that weren't in the game](https://tcrf.net/RAID:_World_War_II).
 
 The issue is, after getting every achievement and maxed out every weapon, the only thing I could unlock were outfits, and they were very expensive. Average job that lasted around 15 minutes paid 2 gold bars at best, and limited and rare Outlaw Raids paid ~50. One set of pants is 150 gold bars. That's rough.
@@ -37,7 +45,7 @@ _Finally added forced challenge card display. Really proud of how it looks, like
 
 Giving player who has the mod gold is easy - just call a function to give gold. RAID WW2 mods have complete control over the source code, so it's trivial to do anything on the side of a player who has the mod. When it comes to other players, I'm limited by the commands that they can listen to.
 
-My first idea was messing with Mission Rewards system, but the system itself is very messy and is entirely controlled on player's side, so I can't do anything about it for the un-modded players.
+My first idea was messing with Mission Rewards system, but the system itself is very messy and is entirely controlled on client side, so I can't do anything about it for the un-modded players.
 
 Then I realized something: in the levels you sometimes find small golden items, like watches and vases, and if you pick up enough of them, you get a gold bar. And even better, host controls placement of these small items, so they can just tell everyone "hey, there's a new golden item" and then immediately pick it up to give everyone some gold.
 ![](./daily-raid/_414740_20241003225513_1.png)
