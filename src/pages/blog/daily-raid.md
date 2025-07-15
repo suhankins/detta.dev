@@ -10,9 +10,9 @@ released: true
 
 # Update from June 26th 2025
 
-On June 26th 2025, MUG team released Bounty Blitz, adding official Daily Bounties to the game. Unlike my implementation, effects each day are completely random.
+On June 26th 2025, MUG team released Bounty Blitz update, adding official Daily Bounties to the game. Unlike my implementation, effects each day are completely random.
 
-Now the mod is obsolete since game has this feature already! Good to know that developers actually started making Daily Bounties by straight up copying my implementation, though they did have to change it a lot after they decided on using completely random effects rather than existing cards.
+Now the mod is obsolete since game has this feature already! Good to know that developers actually started making official Daily Bounties by straight up copying my implementation, though they did have to change it a lot after they decided on using completely random effects rather than existing cards.
 
 # Original post from October 8th 2024
 
