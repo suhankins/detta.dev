@@ -31,14 +31,21 @@ const { title, tags, image, links } = Astro.props;
                         class="background"
                     />
                 </div>
-                <Picture
-                    formats={['avif', 'webp', 'jpeg']}
-                    src={image}
-                    alt=""
-                    width={500}
-                    class="image"
-                    role="presentation"
-                />
+                <a
+                    href={links[0].url}
+                    target="_blank"
+                    rel="noopener"
+                    aria-label={`Open page for ${title}`}
+                >
+                    <Picture
+                        formats={['avif', 'webp', 'jpeg']}
+                        src={image}
+                        alt=""
+                        width={500}
+                        class="image"
+                        role="presentation"
+                    />
+                </a>
             </>
         )
     }
