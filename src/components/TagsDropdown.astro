@@ -12,6 +12,7 @@ const { tags } = Astro.props;
             {tags.toSpliced(0, 1).map((tag) => <li class="tag">{tag}</li>)}
         </ul>
     </div>
+    <!-- Fake accordion resizes opener to be as wide as longest tag -->
     <div class="fake-accordion">
         <ul>
             {tags.toSpliced(0, 1).map((tag) => <li class="tag">{tag}</li>)}
