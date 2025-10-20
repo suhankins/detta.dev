@@ -7,9 +7,30 @@ import SpotifyImage from './screenshots/spotify.png';
 import RaidImage from './screenshots/raid.png';
 import HitmanImage from './screenshots/hitman.jpg';
 import SnakeImage from './screenshots/snakester.png';
+import DeltaImage from './screenshots/delta.png';
 ---
 
 <div>
+    <ProjectCard
+        title="Kerotan and GA-KO Checker Δ"
+        tags={[
+            'Web development',
+            'React',
+            'TypeScript',
+            'Reverse engineering',
+        ]}
+        image={DeltaImage}
+        links={[
+            {
+                type: 'website',
+                url: 'https://delta.detta.dev/',
+            },
+        ]}
+        >Website that reads your save file in <a
+            href="https://store.steampowered.com/app/2417610/METAL_GEAR_SOLID_D_SNAKE_EATER/"
+            >Metal Gear Solid Δ: Snake Eater</a
+        > and tells you which collectables are you missing and where.</ProjectCard
+    >
     <ProjectCard
         title="GET THAT CD BACK"
         tags={['Game development', 'Godot', 'State machines']}
@@ -55,7 +76,13 @@ import SnakeImage from './screenshots/snakester.png';
     >
     <ProjectCard
         title="Ducklake"
-        tags={['Game development', 'PWA', 'Three.js', 'TypeScript', 'State machines']}
+        tags={[
+            'Game development',
+            'PWA',
+            'Three.js',
+            'TypeScript',
+            'State machines',
+        ]}
         image={DucklakeImage}
         links={[
             { type: 'website', url: 'https://ducklake.detta.dev/' },
@@ -131,7 +158,8 @@ import SnakeImage from './screenshots/snakester.png';
             },
         ]}
     >
-        Snake is back with fresh new 3-D graphics, banging soundtrack, and 90s attitude. Do you have the balls to devour every apple in your way?</ProjectCard
+        Snake is back with fresh new 3-D graphics, banging soundtrack, and 90s
+        attitude. Do you have the balls to devour every apple on your way?</ProjectCard
     >
     <ProjectCard
         title="keycap_config decoder"
