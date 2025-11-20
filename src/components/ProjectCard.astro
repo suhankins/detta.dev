@@ -59,7 +59,7 @@ const { title, tags, image, links } = Astro.props;
             <div class="links">
                 {
                     links.map((link) => (
-                        <ProjectLink url={link.url} type={link.type} />
+                        <ProjectLink title={title} url={link.url} type={link.type} />
                     ))
                 }
             </div>

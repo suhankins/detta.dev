@@ -10,39 +10,46 @@ import SteamPath, { viewbox as steamViewbox } from './icons/SteamPath.astro';
 
 const TYPES = {
     github: {
+        text: "GitHub",
         path: GithubPath,
         viewbox: githubViewbox,
     },
     modworkshop: {
+        text: "ModWorkshop",
         path: MwsPath,
         viewbox: mwsViewbox,
     },
     blog: {
+        text: "my blog",
         path: BlogPath,
         viewbox: blogViewbox,
         sameTab: true,
     },
     website: {
+        text: "the web",
         path: WebsitePath,
         viewbox: websiteViewbox,
     },
     itch: {
+        text: "itch.io",
         path: ItchPath,
         viewbox: itchViewbox,
     },
     steam: {
+        text: "Steam",
         path: SteamPath,
         viewbox: steamViewbox
     }
 };
 
 export interface Props {
+    title: string;
     type: keyof typeof TYPES;
     url: string;
     size?: number;
 }
 
-const { url, size, type } = Astro.props;
+const { title, url, size, type } = Astro.props;
 const iconSize = `${size ?? 32}px`;
 const Icon = TYPES[type].path;
 const viewbox = TYPES[type].viewbox;
@@ -53,7 +60,7 @@ const sameTab = 'sameTab' in TYPES[type];
     href={url}
     target={sameTab ? undefined : '_blank'}
     rel={sameTab ? undefined : 'noopener'}
-    aria-label={`Project on ${type}`}
+    aria-label={`"${title}" on ${type}`}
 >
     <svg
         width={iconSize}
