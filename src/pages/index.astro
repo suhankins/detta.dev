@@ -23,11 +23,13 @@ import Fediring from '../components/Fediring.astro';
             <Fediring />
             <div class="badge-collection">
                 <img
+                    class="badge"
                     src="/badges/no-ai.gif"
                     alt={`"No generative AI was used. Made with real fox paws." badge (made by me)`}
                     loading="lazy"
                 />
                 <img
+                    class="badge"
                     src="/badges/miku_approved.gif"
                     alt={`"This site is Miku approved" badge"`}
                     loading="lazy"
@@ -42,6 +44,10 @@ import Fediring from '../components/Fediring.astro';
         display: flex;
         gap: 1ch;
         justify-content: center;
+    }
+    .badge {
+        image-rendering: pixelated;
+        height: 31px;
     }
     .homepage {
         display: flex;
