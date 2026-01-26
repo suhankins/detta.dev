@@ -28,12 +28,6 @@ import Fediring from '../components/Fediring.astro';
                     alt={`"No generative AI was used. Made with real fox paws." badge (made by me)`}
                     loading="lazy"
                 />
-                <img
-                    class="badge"
-                    src="/badges/miku_approved.gif"
-                    alt={`"This site is Miku approved" badge"`}
-                    loading="lazy"
-                />
                 <a rel="noopener" href="https://googleballs.com/">
                     <img
                         class="badge"
@@ -42,6 +36,18 @@ import Fediring from '../components/Fediring.astro';
                         loading="lazy"
                     />
                 </a>
+                <img
+                    class="badge"
+                    src="/badges/miku_approved.gif"
+                    alt={`"This site is Miku approved" badge"`}
+                    loading="lazy"
+                />
+                <img
+                    class="badge"
+                    src="/badges/hatsune-miku-vocaloid.gif"
+                    alt={`Hatsune Miku badge`}
+                    loading="lazy"
+                />
             </div>
         </Footer>
     </div>
@@ -50,6 +56,7 @@ import Fediring from '../components/Fediring.astro';
 <style>
     .badge-collection {
         display: flex;
+        flex-wrap: wrap;
         gap: 1ch;
         justify-content: center;
     }
