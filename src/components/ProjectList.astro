@@ -8,17 +8,32 @@ import RaidImage from './screenshots/raid.png';
 import HitmanImage from './screenshots/hitman.jpg';
 import SnakeImage from './screenshots/snakester.png';
 import DeltaImage from './screenshots/delta.png';
+import MurazuImage from './screenshots/murazu2.png';
 ---
 
 <div>
     <ProjectCard
-        title="Kerotan and GA-KO Checker Δ"
-        tags={[
-            'Web development',
-            'React',
-            'TypeScript',
-            'Reverse engineering',
+        title="Murazu 2"
+        tags={['Godot', 'Game Design']}
+        image={MurazuImage}
+        links={[
+            {
+                type: 'website',
+                url: 'https://murazu.detta.dev/',
+            },
+            {
+                type: 'steam',
+                url: 'https://store.steampowered.com/app/4543000/Murazu_2/',
+            },
         ]}
+        >Help Murazu, a factory android girl, escape a long abandoned facility
+        in a fast-paced precision platformer. Dash through obstacles, launch
+        yourself like a rocket, optimize your movement and route, and reach the
+        finish as quickly as you can!</ProjectCard
+    >
+    <ProjectCard
+        title="Kerotan and GA-KO Checker Δ"
+        tags={['Web development', 'React', 'TypeScript', 'Reverse engineering']}
         image={DeltaImage}
         links={[
             {
