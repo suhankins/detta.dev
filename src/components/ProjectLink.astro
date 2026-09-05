@@ -31,7 +31,7 @@ const TYPES = {
         viewbox: websiteViewbox,
     },
     itch: {
-        text: "itch.io",
+        text: "Itch.io",
         path: ItchPath,
         viewbox: itchViewbox,
     },
@@ -43,24 +43,26 @@ const TYPES = {
 };
 
 export interface Props {
-    title: string;
+    title?: string;
     type: keyof typeof TYPES;
     url: string;
     size?: number;
+    description?: string;
 }
 
-const { title, url, size, type } = Astro.props;
+const { title, url, size, type, description } = Astro.props;
 const iconSize = `${size ?? 32}px`;
 const Icon = TYPES[type].path;
 const viewbox = TYPES[type].viewbox;
-const sameTab = 'sameTab' in TYPES[type];
+const sameTab = 'sameTab' in TYPES[type] && TYPES[type].sameTab;
 ---
 
 <a
     href={url}
     target={sameTab ? undefined : '_blank'}
     rel={sameTab ? undefined : 'noopener'}
-    aria-label={`${title} on ${type}`}
+    aria-label={title ? `${title} on ${TYPES[type].text}` : description}
+    data-tooltip={title ? `${title} on ${TYPES[type].text}` : description}
 >
     <svg
         width={iconSize}

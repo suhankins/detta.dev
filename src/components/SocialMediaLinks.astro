@@ -3,14 +3,31 @@ import ProjectLink from './ProjectLink.astro';
 ---
 
 <div>
-    <ProjectLink title="Reach me" type="github" url="https://github.com/suhankins" size={48} />
     <ProjectLink
-        title="Reach me"
+        type="github"
+        url="https://github.com/suhankins"
+        size={48}
+        title="My projects"
+    />
+    <ProjectLink
         type="modworkshop"
         url="https://modworkshop.net/user/punishedbernadetta"
         size={48}
+        title="My mods"
     />
-    <ProjectLink title="Reach me" type="blog" url="/blog" size={48} />
+    <ProjectLink
+        type="steam"
+        url="https://store.steampowered.com/developer/detta"
+        size={48}
+        title="My games"
+    />
+    <ProjectLink
+        type="itch"
+        url="https://punishedbernadetta.itch.io/"
+        size={48}
+        title="My games"
+    />
+    <ProjectLink type="blog" url="/blog" size={48} description="My blog" />
 </div>
 
 <style>
