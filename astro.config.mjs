@@ -4,7 +4,7 @@ import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypeSlug from 'rehype-slug';
 import paragraphToFigure from './src/rehype/paragraph-to-figure';
 import replaceWebmImgWithVideo from './src/rehype/replace-webm-img-with-video';
-import rehypeMermaid from 'rehype-mermaid';
+import mermaid from 'astro-mermaid';
 
 import sitemap from '@astrojs/sitemap';
 import { unified } from '@astrojs/markdown-remark';
@@ -44,16 +44,9 @@ export default defineConfig({
                 ],
                 replaceWebmImgWithVideo,
                 paragraphToFigure,
-                [
-                    rehypeMermaid,
-                    {
-                        dark: true,
-                        strategy: 'img-svg',
-                    },
-                ],
             ],
         }),
     },
 
-    integrations: [sitemap()],
+    integrations: [mermaid({ theme: "dark", autoTheme: true }), sitemap()],
 });

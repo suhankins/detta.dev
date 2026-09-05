@@ -55,6 +55,15 @@ const { title, description } = Astro.props;
         </div>
     </body>
 </html>
+<script>
+    const updateThemeDataset = (isDarkMode: boolean) => {
+        document.querySelector('html')!.dataset.theme = isDarkMode ? 'dark' : 'light';
+    };
+    window
+        .matchMedia('(prefers-color-scheme: dark)')
+        .addEventListener('change', (event: MediaQueryListEvent) => updateThemeDataset(event.matches));
+    updateThemeDataset(window.matchMedia('(prefers-color-scheme: dark)').matches)
+</script>
 <style is:global>
     @font-face {
         font-family: 'Fira Sans';
@@ -93,8 +102,8 @@ const { title, description } = Astro.props;
         font-display: swap;
     }
     :root {
-        --font-family: 'Fira Sans', 'Segoe UI', Tahoma, Geneva, Verdana,
-            sans-serif;
+        --font-family:
+            'Fira Sans', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
         --text-color: #e6edf3;
         --link-color: #ff94cb;
