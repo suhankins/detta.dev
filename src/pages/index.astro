@@ -23,21 +23,25 @@ import Fediring from '../components/Fediring.astro';
             <Fediring />
             <div class="badge-collection">
                 <img
-                    class="badge"
+                    class="badge pixelated"
                     src="/badges/no-ai.gif"
                     alt={`"No generative AI was used. Made with real fox paws." badge (made by me)`}
                     loading="lazy"
                 />
-                <a rel="noopener" href="https://googleballs.com/">
+                <a
+                    rel="noopener"
+                    target="_blank"
+                    href="https://googleballs.com/"
+                >
                     <img
-                        class="badge"
+                        class="badge pixelated"
                         src="/badges/google_balls.png"
                         alt="4 colored balls representing Google Balls website"
                         loading="lazy"
                     />
                 </a>
                 <img
-                    class="badge"
+                    class="badge pixelated"
                     src="/badges/miku_approved.gif"
                     alt={`"This site is Miku approved" badge"`}
                     loading="lazy"
@@ -50,12 +54,13 @@ import Fediring from '../components/Fediring.astro';
                 />
                 <a
                     rel="noopener"
-                    href="https://www.youtube.com/watch?v=BjjNdkFGrPI"
+                    target="_blank"
+                    href="https://www.youtube.com/playlist?list=OLAK5uy_mle9vZkH4IugHNriwVKAvQ73EU-Dl8tCw"
                 >
                     <img
                         class="badge"
-                        src="/badges/rainbow_road_badge.gif"
-                        alt="Rainbow road badge"
+                        src="/badges/tohobossanova7.png"
+                        alt="Toho Bossa Nova 7 album badge"
                         loading="lazy"
                     />
                 </a>
@@ -72,8 +77,10 @@ import Fediring from '../components/Fediring.astro';
         justify-content: center;
     }
     .badge {
-        image-rendering: pixelated;
         height: 31px;
+    }
+    .pixelated {
+        image-rendering: pixelated;
     }
     .homepage {
         display: flex;
