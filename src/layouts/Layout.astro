@@ -250,7 +250,7 @@ const { title, description } = Astro.props;
         transform: translate(-50%);
         inset: auto auto calc(100% + 0.5em) 50%;
     }
-    [data-tooltip]:hover::before {
+    [data-tooltip]:is(:hover, :focus)::before {
         opacity: 1;
     }
 </style>
