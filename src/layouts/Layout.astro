@@ -233,7 +233,6 @@ const { title, description } = Astro.props;
         text-decoration-line: underline;
         text-decoration-style: dotted;
         position: relative;
-        color: var(--text-color) !important;
     }
     [data-tooltip]::before {
         pointer-events: none;
@@ -249,6 +248,24 @@ const { title, description } = Astro.props;
         white-space: nowrap;
         transform: translate(-50%);
         inset: auto auto calc(100% + 0.5em) 50%;
+        color: var(--text-color) !important;
+    }
+    @supports (position-area: top) {
+        [data-tooltip] {
+            anchor-name: --tooltip;
+            anchor-scope: --tooltip;
+        }
+        [data-tooltip]::before {
+            position: fixed;
+            position-anchor: --tooltip;
+            position-area: top span-all;
+            justify-self: safe anchor-center;
+            inset: auto;
+            transform: none;
+            margin-bottom: 0.5em;
+            width: max-content;
+            max-width: calc(100vw - 1rem);
+        }
     }
     [data-tooltip]:is(:hover, :focus)::before {
         opacity: 1;
