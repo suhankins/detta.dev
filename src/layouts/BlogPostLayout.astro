@@ -44,7 +44,9 @@ const { frontmatter } = Astro.props;
                         <slot />
                     </main>
                     <hr />
-                    <a href="/blog">&larr; Back to post archive</a>
+                    <div class="controls">
+                        <a href="/blog">&larr; Back to post archive</a>
+                    </div>
                 </>
             ) : (
                 <h1>This article isn't ready yet!</h1>
@@ -152,6 +154,14 @@ const { frontmatter } = Astro.props;
         }
         td, th {
             padding: 0.4em;
+        }
+        @media print {
+            .controls {
+                display: none;
+            }
+            .blog-title {
+                margin-top: 0;
+            }
         }
     }
 </style>
